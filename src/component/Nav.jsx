@@ -1,11 +1,7 @@
-function Nav (){
+function nav(){
     return(
-    <>
-     <div className="container-fluid">
-        <h1 className="bg-danger">hello</h1>
-     </div>
-    </>
+        <h1>this is nav</h1>
     )
 }
 
-export default Nav
+export default nav
