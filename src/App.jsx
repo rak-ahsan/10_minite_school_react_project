@@ -5,10 +5,13 @@ import Nav from "./component/Nav.jsx"
 
 function App() {
   return (
+
+    <>
     <Routes>
-        <Route path='/' element={<Nav />} />
-        <Route path='/home' element={<Home />} />
+      <Route path='/' element={<Nav />} />
+      <Route path='/home' element={<Home />} />
     </Routes>
+    </>
   )
 }
 
