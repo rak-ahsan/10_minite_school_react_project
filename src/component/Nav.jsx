@@ -1,17 +1,21 @@
-
+import logo from "../assets/logo.png"
+import Home from "../component/Home.jsx"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faPhone } from '@fortawesome/free-solid-svg-icons'
+import css from "../css/nav.css"
 function nav() {
     return (
-        <nav className="navbar navbar-expand-lg bg-body-tertiary">
+        <><nav className="navbar navbar-expand-lg bg-body-tertiary card bg">
             <div className="container">
-                <a className="navbar-brand" href="#"></a>
+                <a className="navbar-brand" href="#"><img src={logo} className="img-fluid logo " /></a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                <div className="collapse navbar-collapse mx-auto" id="navbarSupportedContent">
+                    <ul className="navbar-nav me-auto mb-2 mb-lg-0 ms-auto">
                         <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            ক্লাস ৫-১২
+                            <a className="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                ক্লাস ৫-১২
                             </a>
                             <ul className="dropdown-menu">
                                 <li><a className="dropdown-item" href="#">এইচএসসি</a></li>
@@ -24,8 +28,8 @@ function nav() {
                             </ul>
                         </li>
                         <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            স্কিলস
+                            <a className="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                স্কিলস
                             </a>
                             <ul className="dropdown-menu">
                                 <li><a className="dropdown-item" href="#">সকল কোর্সসমূহ</a></li>
@@ -41,14 +45,14 @@ function nav() {
                             </ul>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#" >ভর্তি পরীক্ষা</a>
+                            <a className="nav-link active" href="#">ভর্তি পরীক্ষা</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#" >চাকরি প্রস্তুতি</a>
+                            <a className="nav-link active" href="#">চাকরি প্রস্তুতি</a>
                         </li>
                         <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            অনলাইন ব্যাচ
+                            <a className="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                অনলাইন ব্যাচ
                             </a>
                             <ul className="dropdown-menu">
                                 <li><a className="dropdown-item" href="#">সকল কোর্সসমূহ</a></li>
@@ -64,13 +68,24 @@ function nav() {
                             </ul>
                         </li>
                     </ul>
-                    <form className="d-flex" role="search">
-                        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                        <button className="btn btn-outline-success" type="submit">Search</button>
-                    </form>
+                </div>
+                <div className="right">
+                    <div className="d-flex">
+                        <div className="lgbtn">
+                            <a href="tel:+880 16516" className="btn">
+                                <FontAwesomeIcon icon={faPhone} style={{ color: "#1CAB55", }} />
+                                16910
+                            </a>
+                        </div>
+                        <div className="lgbtn login p-1 d-flex justify-contents-center align-items-center">
+                            <a href="" className="nav-link">লগ-ইন</a>
+                        </div>
+
+                    </div>
                 </div>
             </div>
-        </nav>
+        </nav><Home />
+        </>
     )
 }
 

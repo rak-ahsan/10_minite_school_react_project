@@ -1,0 +1,22 @@
+.cardstyle{
+   background-color: #FFFFFF!important;
+   color: black !important;
+}
+.card a:hover{
+    color: green!important;
+}
+
+.hide{
+    display: none;
+ }
+.card :hover .hide{
+   display: block;
+   transition: 1s;
+   
+}
+.radi{
+    border-radius: 15px;
+}
+.a{
+    margin-top: 10px;
+}

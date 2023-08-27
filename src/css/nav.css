@@ -1,0 +1,15 @@
+.logo{
+    width: 100px;
+}
+.bg{
+    background-color: #ffff !important;
+}
+.login{
+    color: white;
+    border-radius: 10px;
+    width: 100px;
+    background-color: #1CAB55 !important;
+    justify-content: center;
+    align-items: center;
+    
+}
