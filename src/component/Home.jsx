@@ -1,5 +1,5 @@
 import bag from "../assets/bag.png"
-import css from "../css/home.css"
+import "../css/home.css"
 import ielts from "../assets/1.webp"
 import ara from "../assets/2.webp"
 import fb from "../assets/3.webp"
@@ -181,15 +181,13 @@ function home() {
                             <div className="card m-2">
                                 <div className="card-body d-flex justify-content-center align-items-center flex-column">
                                     <div className="img col-md-12">
-                                        <iframe width="358" height="198" src="https://www.youtube.com/embed/YxuUnSo4Fzg" title="একশো তে একশো প্রস্তুত পুরো পরিবার | অনলাইন ব্যাচ ৬ষ্ঠ-১০ম শ্রেণি | OVC | Model Test" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                        <iframe width="290" height="198" src="https://www.youtube.com/embed/YxuUnSo4Fzg" title="একশো তে একশো প্রস্তুত পুরো পরিবার | অনলাইন ব্যাচ ৬ষ্ঠ-১০ম শ্রেণি | OVC | Model Test" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                                     </div>
                                     <div className="txt col-md-12">
                                         <h5><b>সব বিষয়ের প্রতি অধ্যায়েই হবে ইচ্ছেমত অনুশীলন
                                         </b></h5>
                                         <p>
-
                                             অনলাইন ব্যাচের লাইব্রেরীতে থাকছে সব বিষয়ের অধ্যায়-ভিত্তিক প্রশ্ন অনুশীলনের সুযোগ।
-
                                         </p>
                                     </div>
                                 </div>
@@ -199,16 +197,13 @@ function home() {
                             <div className="card m-2">
                                 <div className="card-body d-flex justify-content-center align-items-center flex-column">
                                     <div className="img col-md-12">
-                                        <iframe width="358" height="198" src="https://www.youtube.com/embed/xzJwVsbiNZw" title="অনলাইন ব্যাচ (৬ষ্ঠ-১০ম শ্রেণি) | OVC" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                        <iframe width="290" height="198" src="https://www.youtube.com/embed/xzJwVsbiNZw" title="অনলাইন ব্যাচ (৬ষ্ঠ-১০ম শ্রেণি) | OVC" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                                     </div>
                                     <div className="txt col-md-12">
                                         <h5><b>যতই হোক প্রশ্ন, ক্লাসেই সব সমাধান!
                                         </b></h5>
                                         <p>
-
                                             লাইভ ক্লাসে থাকবে ২ জন শিক্ষক! একজন পড়াবেন, আরেকজন চ্যাটে শিক্ষার্থীদের প্রশ্নের উত্তর দিবেন।
-
-
                                         </p>
                                     </div>
                                 </div>
@@ -218,14 +213,13 @@ function home() {
                             <div className="card m-2">
                                 <div className="card-body d-flex justify-content-center align-items-center flex-column ">
                                     <div className="img col-md-12">
-                                        <iframe width="358" height="198" src="https://www.youtube.com/embed/5WLFPNGb6OE" title="যতই হোক প্রশ্ন, ক্লাসেই সব সমাধান! | অনলাইন ব্যাচ ২০২৩ (৬ষ্ঠ-১০ম শ্রেণি) | OVC" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                        <iframe width="290" height="198" src="https://www.youtube.com/embed/5WLFPNGb6OE" title="যতই হোক প্রশ্ন, ক্লাসেই সব সমাধান! | অনলাইন ব্যাচ ২০২৩ (৬ষ্ঠ-১০ম শ্রেণি) | OVC" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                                     </div>
                                     <div className="txt col-md-12 ">
                                         <h5><b>বাবা-মা এখন টেনশন ফ্রি!
 
                                         </b></h5>
                                         <p>
-
                                             অনলাইন ব্যাচের লাইব্রেরীতে থাকছে সব বিষয়ের অধ্যায়-ভিত্তিক প্রশ্ন অনুশীলনের সুযোগ।
                                         </p>
                                     </div>

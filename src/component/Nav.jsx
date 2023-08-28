@@ -2,7 +2,7 @@ import logo from "../assets/logo.png"
 import Home from "../component/Home.jsx"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faPhone } from '@fortawesome/free-solid-svg-icons'
-import css from "../css/nav.css"
+import "../css/nav.css"
 function nav() {
     return (
         <><nav className="navbar navbar-expand-lg bg-body-tertiary card bg">
