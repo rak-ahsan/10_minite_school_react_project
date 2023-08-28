@@ -90,6 +90,7 @@ function home() {
                 </div>
             </div>
         </div>
+            {/* ক্লাস ৫-১২ */}
             <div className="container mt-5">
                 <div className="first text-center">
                     <h1><b>নিজের শেখা নিজেই গুছিয়ে <br />নেয়ার যাত্রা শুরু হোক
@@ -103,7 +104,7 @@ function home() {
                             <div className="card m-2">
                                 <div className="card-body d-flex justify-content-center align-items-center">
                                     <div className="img col-md-4">
-                                        <img src={bag} style={{ width: "100px" }} />
+                                        <img src={bag} style={{ width: "70px" }} />
                                     </div>
                                     <div className="txt col-md-8">
                                         <h2><b>ক্লাস ৫-১২</b></h2>
@@ -179,8 +180,8 @@ function home() {
                     <div className="row">
                         <div className="col-md-4 p-3">
                             <div className="card m-2">
-                                <div className="card-body d-flex justify-content-center align-items-center flex-column">
-                                    <div className="img col-md-12">
+                                <div className="card-body d-flex justify-content-center align-items-stretch flex-column vh-50  align-self-stretch">
+                                    <div className="ratio ratio-4x3">
                                         <iframe width="290" height="198" src="https://www.youtube.com/embed/YxuUnSo4Fzg" title="একশো তে একশো প্রস্তুত পুরো পরিবার | অনলাইন ব্যাচ ৬ষ্ঠ-১০ম শ্রেণি | OVC | Model Test" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                                     </div>
                                     <div className="txt col-md-12">
@@ -195,8 +196,8 @@ function home() {
                         </div>
                         <div className="col-md-4 p-3">
                             <div className="card m-2">
-                                <div className="card-body d-flex justify-content-center align-items-center flex-column">
-                                    <div className="img col-md-12">
+                                <div className="card-body d-flex justify-content-center align-items-stretch flex-column mb-4">
+                                    <div className="ratio ratio-4x3">
                                         <iframe width="290" height="198" src="https://www.youtube.com/embed/xzJwVsbiNZw" title="অনলাইন ব্যাচ (৬ষ্ঠ-১০ম শ্রেণি) | OVC" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                                     </div>
                                     <div className="txt col-md-12">
@@ -211,8 +212,8 @@ function home() {
                         </div>
                         <div className="col-md-4 p-3">
                             <div className="card m-2">
-                                <div className="card-body d-flex justify-content-center align-items-center flex-column ">
-                                    <div className="img col-md-12">
+                                <div className="card-body d-flex justify-content-center align-items-stretch flex-column mb-4 align-self-stretch">
+                                    <div className="ratio ratio-4x3">
                                         <iframe width="290" height="198" src="https://www.youtube.com/embed/5WLFPNGb6OE" title="যতই হোক প্রশ্ন, ক্লাসেই সব সমাধান! | অনলাইন ব্যাচ ২০২৩ (৬ষ্ঠ-১০ম শ্রেণি) | OVC" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                                     </div>
                                     <div className="txt col-md-12 ">
@@ -228,8 +229,79 @@ function home() {
                         </div>
                     </div>
                 </div>
-                <div className="morebtn ">
-                    <a  className="nav-link btn btn-success p-3"> আপনার ক্লাস বেছে নিন </a>
+                <div className="col-md-12 text-white d-flex justify-content-center" style={{ margin: "100px 0px" }}>
+                    <div className="link">
+                        <a className="nav-link btn p-3" style={{ width: "200px", height: "50px", backgroundColor: "#198B46" }}> আপনার ক্লাস বেছে নিন </a>
+                    </div>
+
+                </div>
+
+            </div>
+            {/* SSC & HSC */}
+            <div className="container-fluid" style={{ backgroundColor: "#F4F7FD" }}>
+                <div className="row">
+                    <div className="container" style={{ maxWidth: "1280px" }}>
+                        <div className="container mt-5" style={{ margin: "100px 0px" }}>
+                            <div className="first text-center">
+                                <p style={{ color: "#306BF4" }}><img src={bag} alt="" style={{ width: "20px" }} className="m-2" /><b>SSC & HSC</b></p>
+                                <h1><b>SSC ও HSC শিক্ষার্থীদের জন্য
+                                </b></h1>
+                            </div>
+                            {/* <div className="col-md-12 text-white d-flex justify-content-center" style={{ margin: "100px 0px" }}>
+                                <div className="link">
+                                    <a className="nav-link btn p-3" style={{ width: "200px", height: "50px", backgroundColor: "#198B46" }}> আপনার ক্লাস বেছে নিন </a>
+                                </div>
+
+                            </div> */}
+
+                        </div>
+                        <div className="container">
+                            <div className="row">
+                                <div className="col-sm-12 col-md-4">
+                                    <div className="card mb-3">
+                                        <img src="..." className="card-img-top" alt="..." />
+                                        <div className="card-body">
+                                            <h5 className="card-title">Card title</h5>
+                                            <p className="card-text">
+                                                Some quick example text to build on the card title and make up the bulk of the card's content.
+                                            </p>
+                                            <a href="#" className="btn btn-primary">
+                                                Go somewhere
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-sm-12 col-md-4">
+                                    <div className="card mb-3">
+                                        <img src="..." className="card-img-top" alt="..." />
+                                        <div className="card-body">
+                                            <h5 className="card-title">Card title</h5>
+                                            <p className="card-text">
+                                                Some quick example text to build on the card title and make up the bulk of the card's content.
+                                            </p>
+                                            <a href="#" className="btn btn-primary">
+                                                Go somewhere
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="col-sm-12 col-md-4">
+                                    <div className="card mb-3">
+                                        <img src="..." className="card-img-top" alt="..." />
+                                        <div className="card-body">
+                                            <h5 className="card-title">Card title</h5>
+                                            <p className="card-text">
+                                                Some quick example text to build on the card title and make up the bulk of the card's content.
+                                            </p>
+                                            <a href="#" className="btn btn-primary">
+                                                Go somewhere
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
