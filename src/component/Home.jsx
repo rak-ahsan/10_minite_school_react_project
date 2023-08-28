@@ -1,5 +1,7 @@
 import bag from "../assets/bag.png"
 import "../css/home.css"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faCircleCheck } from '@fortawesome/free-solid-svg-icons'
 import ielts from "../assets/1.webp"
 import ara from "../assets/2.webp"
 import fb from "../assets/3.webp"
@@ -8,6 +10,9 @@ import comu from "../assets/5.webp"
 import skill from "../assets/roc.png"
 import adm from "../assets/adm.png"
 import job from "../assets/job.png"
+import hsc from "../assets/hsc_25_ob.webp"
+import c1 from "../assets/hsc_24_1p_cc_thumb.webp"
+import c2 from "../assets/hsc_24_CC_2nd_paper_thumbnail_july_24_16x9_1692008893328.webp"
 
 function home() {
     return (
@@ -18,10 +23,12 @@ function home() {
                     <p className="p-3">শ্রেনি অনুযায়ী সপ্তাহে ৬-১০টি লাইভ ক্লাস, সাথে লেকচার শিট এবং নিয়মিত পরীক্ষার সুবিধা</p>
                 </div>
                 <div className="batches d-flex flex-wrap text-center justify-content-center ">
-                    <div className="card col-lg-2 col-md-2 col-sm-6 mb-3 m-2 cardstyle">
+                    <div className="card  col-lg-2 col-md-2 col-sm-6 mb-3 m-2">
                         <div className="card-body">
                             <h5 className="card-title"><img src={bag} style={{ width: "50px" }} /></h5>
-                            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <p className="card-text">এইচএসসি'২৫ <br />
+                            </p>
+                            <a href="" className="nav-link active a"> ভর্তি হও </a>
                         </div>
                     </div>
                     <div className="card  col-lg-2 col-md-2 col-sm-6 mb-3 m-2">
@@ -33,14 +40,7 @@ function home() {
                             <a href="" className="nav-link active a"> ভর্তি / ফ্রি ট্রায়াল </a>
                         </div>
                     </div>
-                    <div className="card  col-lg-2 col-md-2 col-sm-6 mb-3 m-2">
-                        <div className="card-body">
-                            <h5 className="card-title"><img src={bag} style={{ width: "50px" }} /></h5>
-                            <p className="card-text">এইচএসসি'২৫ <br />
-                            </p>
-                            <a href="" className="nav-link active a"> ভর্তি হও </a>
-                        </div>
-                    </div>
+
                     <div className="card  col-lg-2 col-md-2 col-sm-6 mb-3  m-2">
                         <div className="card-body">
                             <h5 className="card-title"><img src={bag} style={{ width: "50px" }} /></h5>
@@ -48,10 +48,22 @@ function home() {
                             <a href="" className="nav-link active a"> ভর্তি / ফ্রি ট্রায়াল </a>
                         </div>
                     </div>
+                    <div className="card  col-lg-2 col-md-2 col-sm-6 mb-3 m-2">
+                        <div className="card-body">
+                            <h5 className="card-title"><img src={bag} style={{ width: "50px" }} /></h5>
+                            <p className="card-text">৮ম শ্রেনি
+
+                                <span className="hide">বিজ্ঞান, গণিত, BGS, ICT, বাংলা ও ইংরেজি</span>
+                            </p>
+                            <a href="" className="nav-link active a"> ভর্তি / ফ্রি ট্রায়ালম শ্রেনি </a>
+                        </div>
+                    </div>
+
                     <div className="card  col-lg-2 col-md-2 col-sm-6 mb-3  m-2">
                         <div className="card-body">
                             <h5 className="card-title"><img src={bag} style={{ width: "50px" }} /></h5>
-                            <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <p className="card-text">৭ম  শ্রেনি</p>
+                            <a href="" className="nav-link active a"> ভর্তি / ফ্রি ট্রায়াল </a>
                         </div>
                     </div>
                     <a href="" className="text-center nav-link p-3 a" style={{ color: "green" }}>অনলাইন ব্যাচ সম্পর্কে আরও জানুন</a>
@@ -255,49 +267,68 @@ function home() {
                             </div> */}
 
                         </div>
-                        <div className="container">
+                        <div className="container" style={{ margin: "100px 0px" }}>
                             <div className="row">
-                                <div className="col-sm-12 col-md-4">
-                                    <div className="card mb-3">
-                                        <img src="..." className="card-img-top" alt="..." />
-                                        <div className="card-body">
-                                            <h5 className="card-title">Card title</h5>
-                                            <p className="card-text">
-                                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                            </p>
-                                            <a href="#" className="btn btn-primary">
-                                                Go somewhere
-                                            </a>
+                                <div className="col-sm-12 col-md-4 ">
+                                    <a href="" className="nav-link ">
+                                        <div className="card mb-3 card-border">
+                                            <img src={hsc} alt="" className="img-fluid" />
+                                            <div className="card-body">
+                                                <h5 className="card-title mb-3">HSC 25 অনলাইন ব্যাচ</h5>
+                                                <a href="#" className="btn">
+                                                    <h3 style={{ color: "green" }}>৳ 4500</h3>
+                                                </a>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
                                 <div className="col-sm-12 col-md-4">
-                                    <div className="card mb-3">
-                                        <img src="..." className="card-img-top" alt="..." />
-                                        <div className="card-body">
-                                            <h5 className="card-title">Card title</h5>
-                                            <p className="card-text">
-                                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                            </p>
-                                            <a href="#" className="btn btn-primary">
-                                                Go somewhere
-                                            </a>
+                                    <a href="" className="nav-link ">
+                                        <div className="card mb-3 card-border">
+                                            <img src={c1} alt="" className="img-fluid" />
+                                            <div className="card-body">
+                                                <h5 className="card-title mb-3">HSC 2024 ক্র্যাশ কোর্স - প্রথম পত্র</h5>
+                                                <a href="#" className="btn">
+                                                    <h3 style={{ color: "green" }}>৳ 2500</h3>
+                                                </a>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
                                 <div className="col-sm-12 col-md-4">
-                                    <div className="card mb-3">
-                                        <img src="..." className="card-img-top" alt="..." />
-                                        <div className="card-body">
-                                            <h5 className="card-title">Card title</h5>
-                                            <p className="card-text">
-                                                Some quick example text to build on the card title and make up the bulk of the card's content.
-                                            </p>
-                                            <a href="#" className="btn btn-primary">
-                                                Go somewhere
-                                            </a>
+                                    <a href="" className="nav-link ">
+                                        <div className="card mb-3 card-border">
+                                            <img src={c2} alt="" className="img-fluid" />
+                                            <div className="card-body">
+                                                <h5 className="card-title mb-3">HSC 24 ক্র্যাশ কোর্স - দ্বিতীয় পত্র</h5>
+                                                <a href="#" className="btn">
+                                                    <h3 style={{ color: "green" }}>৳ 2500</h3>
+                                                </a>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="container-fluid text-white" style={{ backgroundColor: "#000000" }}>
+                <div className="row">
+                    <div className="container " style={{ maxWidth: "1280px" }}>
+                        <div className="container mt-5" style={{ margin: "100px 0px" }}>
+                            <div className="first text-center">
+                                <p className="text-white" style={{ color: "#306BF4" }}><img src={skill} alt="" style={{ width: "50px" }} className=" img-fluid" /><b>স্কিলস</b></p>
+                                <h1><b>দেশসেরা স্কিল ডেভেলপমেন্ট প্লাটফর্ম
+                                </b></h1>
+                                <div className="text">
+                                    <p className="p-3">
+                                        <FontAwesomeIcon icon={faCircleCheck} size="xl" style={{ color: "#005eff", }} className="mx-3" />  দেশসেরা শিক্ষক
+                                        <FontAwesomeIcon icon={faCircleCheck} size="xl" style={{ color: "#005eff", }} className="mx-3" />
+                                        ৫ লাখ+শিক্ষার্থী
+                                        <FontAwesomeIcon icon={faCircleCheck} size="xl" style={{ color: "#005eff", }} className="mx-3" />
+                                        ৭০+ অনলাইন কোর্স
+                                    </p>
                                 </div>
                             </div>
                         </div>
