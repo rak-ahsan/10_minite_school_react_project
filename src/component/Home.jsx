@@ -80,8 +80,8 @@ function home() {
                         <img src={ielts} className="img-fluid" />
                     </div>
                 </div>
-                <div className="card  col-lg-2 col-md-2 col-sm-6 mb-3 m-2">
-                    <div className="card-body">
+                <div className="card  col-lg-2 col-md-2 col-sm-6 mb-3 m-2 ">
+                    <div className="card-body ">
                         <img src={ara} className="img-fluid" />
                     </div>
                 </div>
@@ -113,8 +113,8 @@ function home() {
                 <div className="container">
                     <div className="row">
                         <div className="col-md-6 p-3">
-                            <div className="card m-2">
-                                <div className="card-body d-flex justify-content-center align-items-center">
+                            <div className="card m-2 card-border">
+                                <div className="card-body d-flex justify-content-center align-items-center " >
                                     <div className="img col-md-4">
                                         <img src={bag} style={{ width: "70px" }} />
                                     </div>
@@ -129,8 +129,8 @@ function home() {
                             </div>
                         </div>
                         <div className="col-md-6 p-3">
-                            <div className="card m-2">
-                                <div className="card-body d-flex justify-content-center align-items-center">
+                            <div className="card m-2 card-border">
+                                <div className="card-body d-flex justify-content-center align-items-center ">
                                     <div className="img col-md-4">
                                         <img src={skill} style={{ width: "100px" }} />
                                     </div>
@@ -144,8 +144,8 @@ function home() {
                             </div>
                         </div>
                         <div className="col-md-6 p-3">
-                            <div className="card m-2">
-                                <div className="card-body d-flex justify-content-center align-items-center">
+                            <div className="card m-2 card-border">
+                                <div className="card-body d-flex justify-content-center align-items-center ">
                                     <div className="img col-md-4">
                                         <img src={adm} style={{ width: "100px" }} />
                                     </div>
@@ -159,8 +159,8 @@ function home() {
                             </div>
                         </div>
                         <div className="col-md-6 p-3">
-                            <div className="card m-2">
-                                <div className="card-body d-flex justify-content-center align-items-center">
+                            <div className="card m-2 card-border">
+                                <div className="card-body d-flex justify-content-center align-items-center ">
                                     <div className="img col-md-4">
                                         <img src={job} style={{ width: "85px" }} />
                                     </div>
