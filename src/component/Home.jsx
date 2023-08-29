@@ -2,6 +2,8 @@ import bag from "../assets/bag.png"
 import "../css/home.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCircleCheck } from '@fortawesome/free-solid-svg-icons'
+import Card from "./card"
+import Button from "./Button"
 import ielts from "../assets/1.webp"
 import ara from "../assets/2.webp"
 import fb from "../assets/3.webp"
@@ -13,6 +15,9 @@ import job from "../assets/job.png"
 import hsc from "../assets/hsc_25_ob.webp"
 import c1 from "../assets/hsc_24_1p_cc_thumb.webp"
 import c2 from "../assets/hsc_24_CC_2nd_paper_thumbnail_july_24_16x9_1692008893328.webp"
+import eng from "../assets/ghore-boshe-Spoken-English-course-thumbnail-by-Munzereen-Shahid-16x9.webp"
+import arbi from "../assets/sohoje_spoken_arbi_16x9.webp"
+import mock from "../assets/ielts-listening-and-reading-mock-test-thumbnail.webp"
 
 function home() {
     return (
@@ -241,12 +246,7 @@ function home() {
                         </div>
                     </div>
                 </div>
-                <div className="col-md-12 text-white d-flex justify-content-center" style={{ margin: "100px 0px" }}>
-                    <div className="link">
-                        <a className="nav-link btn p-3" style={{ width: "200px", height: "50px", backgroundColor: "#198B46" }}> আপনার ক্লাস বেছে নিন </a>
-                    </div>
-
-                </div>
+                <Button btntext="আপনার ক্লাস বেছে নিন" />
 
             </div>
             {/* SSC & HSC */}
@@ -259,61 +259,18 @@ function home() {
                                 <h1><b>SSC ও HSC শিক্ষার্থীদের জন্য
                                 </b></h1>
                             </div>
-                            {/* <div className="col-md-12 text-white d-flex justify-content-center" style={{ margin: "100px 0px" }}>
-                                <div className="link">
-                                    <a className="nav-link btn p-3" style={{ width: "200px", height: "50px", backgroundColor: "#198B46" }}> আপনার ক্লাস বেছে নিন </a>
-                                </div>
-
-                            </div> */}
-
                         </div>
                         <div className="container" style={{ margin: "100px 0px" }}>
-                            <div className="row">
-                                <div className="col-sm-12 col-md-4 ">
-                                    <a href="" className="nav-link ">
-                                        <div className="card mb-3 card-border">
-                                            <img src={hsc} alt="" className="img-fluid" />
-                                            <div className="card-body">
-                                                <h5 className="card-title mb-3">HSC 25 অনলাইন ব্যাচ</h5>
-                                                <a href="#" className="btn">
-                                                    <h3 style={{ color: "green" }}>৳ 4500</h3>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div className="col-sm-12 col-md-4">
-                                    <a href="" className="nav-link ">
-                                        <div className="card mb-3 card-border">
-                                            <img src={c1} alt="" className="img-fluid" />
-                                            <div className="card-body">
-                                                <h5 className="card-title mb-3">HSC 2024 ক্র্যাশ কোর্স - প্রথম পত্র</h5>
-                                                <a href="#" className="btn">
-                                                    <h3 style={{ color: "green" }}>৳ 2500</h3>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div className="col-sm-12 col-md-4">
-                                    <a href="" className="nav-link ">
-                                        <div className="card mb-3 card-border">
-                                            <img src={c2} alt="" className="img-fluid" />
-                                            <div className="card-body">
-                                                <h5 className="card-title mb-3">HSC 24 ক্র্যাশ কোর্স - দ্বিতীয় পত্র</h5>
-                                                <a href="#" className="btn">
-                                                    <h3 style={{ color: "green" }}>৳ 2500</h3>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
+                            <div className="row justify-content-center">
+                                <Card title="HSC 25 অনলাইন ব্যাচ" img={hsc} price="৳ 4500" className="col-md-3" />
+                                <Card title="HSC 2024 ক্র্যাশ কোর্স - প্রথম পত্র" img={c1} price="৳ 2500" className="col-md-3" />
+                                <Card title="HSC 24 ক্র্যাশ কোর্স - দ্বিতীয় পত্র" img={c2} price="৳ 2500" className="col-md-3" />
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div className="container-fluid text-white" style={{ backgroundColor: "#000000" }}>
+            <div className="container-fluid text-white 100vh" style={{ backgroundColor: "#000000" }}>
                 <div className="row">
                     <div className="container " style={{ maxWidth: "1280px" }}>
                         <div className="container mt-5" style={{ margin: "100px 0px" }}>
@@ -330,11 +287,18 @@ function home() {
                                         ৭০+ অনলাইন কোর্স
                                     </p>
                                 </div>
-                                
+                            </div>
+                            <div className="container mt-5">
+                                <div className="row justify-content-center" style={{maxHeight:"500px"}}>
+                                    <Card title="ঘরে বসে Spoken English" img={eng} bis="বিস্তারিত" className="col-md-3" />
+                                    <Card title="সহজে Spoken আরবি" img={arbi} bis=" বিস্তারিত" className="col-md-3" />
+                                    <Card title="IELTS Reading & Listening Mock Tests" img={mock} bis=" বিস্তারিত" className="col-md-3" />
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <Button btntext="সকল কোর্স" />
             </div>
 
 
