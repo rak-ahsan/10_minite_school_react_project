@@ -322,7 +322,7 @@ function home() {
                         <Card title="ভার্সিটি C Unit + গুচ্ছ এডমিশন কোর্স - ২০২৩
 " img={c_unit} bis=" বিস্তারিত" className="col-md-3" />
                     </div>
-                    <Button btntext="সকল কোর্স"/>
+                    <Button btntext="সকল কোর্স" />
                 </div>
             </div>
             <div className="container-fluid" style={{ backgroundColor: "#F4F7FD" }}>
