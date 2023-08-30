@@ -2,7 +2,9 @@ import bag from "../assets/bag.png"
 import "../css/home.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCircleCheck } from '@fortawesome/free-solid-svg-icons'
+import Footer from "./footer"
 import Card from "./card"
+import Top from "./toptext"
 import Button from "./Button"
 import ielts from "../assets/1.webp"
 import ara from "../assets/2.webp"
@@ -18,6 +20,10 @@ import c2 from "../assets/hsc_24_CC_2nd_paper_thumbnail_july_24_16x9_16920088933
 import eng from "../assets/ghore-boshe-Spoken-English-course-thumbnail-by-Munzereen-Shahid-16x9.webp"
 import arbi from "../assets/sohoje_spoken_arbi_16x9.webp"
 import mock from "../assets/ielts-listening-and-reading-mock-test-thumbnail.webp"
+import medical from "../assets/medical_unit_admission_2023_thumb.webp"
+import a_unit from "../assets/a_unit_admission_23_thumb.webp"
+import b_unit from "../assets/b_unit_admission_23_thumb.webp"
+import c_unit from "../assets/c-unit-university-and-cluster-admission-course-thumbnail.webp"
 
 function home() {
     return (
@@ -260,6 +266,7 @@ function home() {
                                 </b></h1>
                             </div>
                         </div>
+                        <Top />
                         <div className="container" style={{ margin: "100px 0px" }}>
                             <div className="row justify-content-center">
                                 <Card title="HSC 25 অনলাইন ব্যাচ" img={hsc} price="৳ 4500" className="col-md-3" />
@@ -289,7 +296,7 @@ function home() {
                                 </div>
                             </div>
                             <div className="container mt-5">
-                                <div className="row justify-content-center" style={{maxHeight:"500px"}}>
+                                <div className="row justify-content-center" style={{ maxHeight: "500px" }}>
                                     <Card title="ঘরে বসে Spoken English" img={eng} bis="বিস্তারিত" className="col-md-3" />
                                     <Card title="সহজে Spoken আরবি" img={arbi} bis=" বিস্তারিত" className="col-md-3" />
                                     <Card title="IELTS Reading & Listening Mock Tests" img={mock} bis=" বিস্তারিত" className="col-md-3" />
@@ -300,8 +307,43 @@ function home() {
                 </div>
                 <Button btntext="সকল কোর্স" />
             </div>
+            <div className="container-fluid" style={{ backgroundColor: "#F4F7FD" }}>
+                <div className="row">
+                    <div className="container" style={{ maxWidth: "1280px" }}>
+                        <Top img={adm} short="ভর্তি পরীক্ষা" color="red" title="স্বপ্নের ভার্সিটির সম্পূর্ণ প্রস্তুতি" sht="ইঞ্জিনিয়ারিং-মেডিকেল কিংবা ভার্সিটি-গুচ্ছ - লক্ষ্য যাই হোক, অর্জনের পথ এখানেই।" />
 
+                    </div>
+                    <div className="row justify-content-center align-items-center" style={{ maxHeight: "500px" }}>
+                        <Card title="মেডিকেল এডমিশন কোর্স - ২০২৩" img={medical} bis="বিস্তারিত" className="col-md-3" />
+                        <Card title="ভার্সিটি A Unit + গুচ্ছ এডমিশন কোর্স - ২০২৩
+" img={a_unit} bis=" বিস্তারিত" className="col-md-3" />
+                        <Card title="ভার্সিটি B Unit + গুচ্ছ এডমিশন কোর্স - ২০২৩
+" img={b_unit} bis=" বিস্তারিত" className="col-md-3" />
+                        <Card title="ভার্সিটি C Unit + গুচ্ছ এডমিশন কোর্স - ২০২৩
+" img={c_unit} bis=" বিস্তারিত" className="col-md-3" />
+                    </div>
+                    <Button btntext="সকল কোর্স"/>
+                </div>
+            </div>
+            <div className="container-fluid" style={{ backgroundColor: "#F4F7FD" }}>
+                <div className="row">
+                    <div className="container" style={{ maxWidth: "1280px" }}>
+                        <Top img={job} short="চাকরি প্রস্তুতি" color="red" title="সরকারি চাকরির সর্বোচ্চ প্রস্তুতি
+" sht="বিসিএস কিংবা ব্যাংকে চাকরি - টার্গেট যেটাই হোক, সলিউশন এখানেই!
+" />
 
+                    </div>
+                    <div className="row justify-content-center align-items-center" style={{ maxHeight: "500px" }}>
+                        <Card title="মেডিকেল এডমিশন কোর্স - ২০২৩" img={medical} bis="বিস্তারিত" className="col-md-3" />
+                        <Card title="ভার্সিটি A Unit + গুচ্ছ এডমিশন কোর্স - ২০২৩
+" img={a_unit} bis=" বিস্তারিত" className="col-md-3" />
+                        <Card title="ভার্সিটি B Unit + গুচ্ছ এডমিশন কোর্স - ২০২৩
+" img={b_unit} bis=" বিস্তারিত" className="col-md-3" />
+                        <Card title="ভার্সিটি C Unit + গুচ্ছ এডমিশন কোর্স - ২০২৩
+" img={c_unit} bis=" বিস্তারিত" className="col-md-3" />
+                    </div>
+                </div>
+            </div>
         </>
 
     );

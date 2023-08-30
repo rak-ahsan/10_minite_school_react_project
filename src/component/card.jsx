@@ -4,7 +4,7 @@ const card = (props) => {
     return (
         <div className={`col-sm-12 ${props.className}`}>
             <a href="" className="nav-link ">
-                <div className="card mb-3 card-border">
+                <div className="card mb-3 card-border h-100">
                     <img src={props.img} alt="" className="img-fluid" />
                     <div className="card-body">
                         <h5 className="card-title mb-3">{props.title}</h5>
