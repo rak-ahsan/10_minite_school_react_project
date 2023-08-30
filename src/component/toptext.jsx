@@ -8,6 +8,8 @@ const toptext = (props) => {
                 <b>{props.short}</b></p>
                 <h1><b>{props.title}
                 </b></h1>
+                <h1><b>{props.titles}
+                </b></h1>
                 <p className='pt-3'>{props.sht}</p>
             </div>
         </div>

@@ -1,25 +1,37 @@
-.cardstyle{
-   background-color: #FFFFFF!important;
-   color: black !important;
-}
-.card a:hover{
-    color: green!important;
+.cardstyle {
+    background-color: #FFFFFF !important;
+    color: black !important;
 }
 
-.hide{
-    display: none;
- }
-.card :hover .hide{
-   transition: 1s;
-   
+.card a:hover {
+    color: green !important;
 }
-.radi{
+
+.hide {
+    display: none;
+}
+
+.card :hover .hide {
+    transition: 1s;
+
+}
+
+.radi {
     border-radius: 15px;
 }
-.a{
+
+.a {
     margin-top: 10px;
 }
+
 .card-border:hover {
-border-color: green;
-border: 1px solid green;
+    border-color: green;
+    border: 1px solid green;
+}
+
+.bgimg {
+    background-image: url(../assets/learning-platform-bg.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
