@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const sidebar = () => {
   return (
@@ -10,7 +11,7 @@ const sidebar = () => {
       </button>
     </h2>
     <div id="flush-collapseOne" className="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-      <div className="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> className. This is the first item's accordion body.</div>
+      <div className="accordion-body"></div>
     </div>
   </div>
   <div className="accordion-item">
@@ -50,7 +51,8 @@ const sidebar = () => {
       </button>
     </h2>
     <div id="flush-collapseFive" className="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-      <div className="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> className. This is the third item's accordion body. Nothing more exciting happening here in terms of content, but just filling up the space to make it look, at least at first glance, a bit more representative of how this would look in a real-world application.</div>
+      <div className="accordion-body"><Link to={"/Addteacher"} className='nav-link'>Add A Teacher</Link></div>
+      <div className="accordion-body"><Link to={"/viewteacher"} className='nav-link'>viewteacher</Link></div>
     </div>
   </div>
   <div className="accordion-item">

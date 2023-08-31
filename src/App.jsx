@@ -10,7 +10,10 @@ import Sidebar from './pages/backend/sidebar.jsx'
 import Dashboard from './pages/backend/dashboard.jsx'
 import Login from './pages/login.jsx'
 import Studen from './pages/backend/studen.jsx'
-import Job from './pages/backend/job.jsx'
+import Addteacher from './pages/backend/addteacher.jsx'
+import Viewteacher from './pages/backend/viewteacher.jsx'
+import Editteaacher from './pages/backend/Editteaacher.jsx'
+
 
 
 
@@ -29,7 +32,9 @@ function App() {
         <Route path='/Hscbatch' element={<Hscbatch />} />
         <Route path='/Sidebar' element={<Sidebar />} />
         <Route path='/studen' element={<Studen />} />
-        <Route path='/job' element={<Job />} />
+        <Route path='/addteacher' element={<Addteacher />} />
+        <Route path='/viewteacher' element={<Viewteacher />} />
+        <Route path='/teacher/:id/edit' element={<Editteaacher />} />
         <Route path='*' element={<Npage />} />
       </Routes>
   )
