@@ -3,9 +3,11 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import Sidebar from './sidebar'
 import Header from '../../component/heback'
+
 const viewteacher = () => {
 
     const [teacher, setTeacher] = useState([]);
+    
     useEffect(() => {
         axios.get(`http://localhost/ReactProject/api/api-fetch-allteacher.php`).then(res => {
             setTeacher(res.data)
