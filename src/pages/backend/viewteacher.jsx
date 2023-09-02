@@ -12,18 +12,19 @@ const ViewTeacher = () => {
         });
     }, []);
 
-    
-    const deleteTeacher = (e,tea_id) => {
+
+    const deleteTeacher = (e, tea_id) => {
         const click = e.currentTarget;
         e.preventDefault();
 
-        if(confirm("Are You Sure?")){
-        axios.get(`http://localhost/ReactProject/api/api-teacher.php?id=${tea_id}`).then(res => {
-            alert("Done")
-            click.closest("tr").remove()
-        })}else{}
+        if (confirm("Are You Sure?")) {
+            axios.get(`http://localhost/ReactProject/api/api-teacher.php?id=${tea_id}`).then(res => {
+                alert("Done")
+                click.closest("tr").remove()
+            })
+        } else { }
     }
-    
+
 
     return (
         <>
@@ -47,20 +48,22 @@ const ViewTeacher = () => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    {teacher.map((item, index) => (
-                                        <tr key={index}>
-                                            <td>{item.tea_name}</td>
-                                            <td>{item.tea_fee}</td>
-                                            <td>{item.tea_class}</td>
-                                            <td>{item.tea_subject}</td>
-                                            <td>{item.tea_number}</td>
-                                            <td>
-                                                <Link to={`/teacher/${item.tea_id}/edit`} className='btn btn-success'>Update</Link>
-                                                <button className='btn btn-danger' onClick={(e) => deleteTeacher(e, item.tea_id)}>Delete</button>
-                                            </td>
-                                        </tr>
-                                    ))}
-                                </tbody>
+                                        {teacher.length > 0 && (
+                                            teacher.map((item, index) => (
+                                                <tr key={index}>
+                                                    <td>{item.tea_name}</td>
+                                                    <td>{item.tea_fee}</td>
+                                                    <td>{item.tea_class}</td>
+                                                    <td>{item.tea_subject}</td>
+                                                    <td>{item.tea_number}</td>
+                                                    <td>
+                                                        <Link to={`/teacher/${item.tea_id}/edit`} className='btn btn-success'>Update</Link>
+                                                        <button className='btn btn-danger' onClick={(e) => deleteTeacher(e, item.tea_id)}>Delete</button>
+                                                    </td>
+                                                </tr>
+                                            ))
+                                        )}
+                                    </tbody>
                             </table>
                         </div>
                     </div>
