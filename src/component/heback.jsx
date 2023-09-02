@@ -61,7 +61,7 @@ function nav() {
                                 <Link className="nav-link active" to="/studen">কোর্স এড করুন</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link active" to="/job">শিক্ষক যুক্ত করুন</Link>
+                                <Link className="nav-link active" to="/Addteacher">শিক্ষক যুক্ত করুন</Link>
                             </li>
                             {/* <li className="nav-item dropdown">
                                 <Link className="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

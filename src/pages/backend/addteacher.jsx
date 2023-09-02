@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Form from 'react-bootstrap/Form';
 import Sidebar from './sidebar'
 import Header from '../../component/heback'
@@ -24,7 +24,7 @@ function studen() {
     }
 
 
-    const reset =()=>{
+    const reset = () => {
         setTeacher({
             name: "",
             fee: "",
@@ -53,10 +53,35 @@ function studen() {
         axios.post(`http://localhost/ReactProject/api/api-insert-teacher.php`, data).then(res => {
             alert("Data Inserted");
             reset()
-            
-        });
 
+        });
     }
+
+
+
+    const [clases, setClass] = useState([]);
+    useEffect(() => {
+        axios.get(`http://localhost/ReactProject/api/api-fetch-class.php`).then(res => {
+            setClass(res.data)
+        });
+    },[])
+
+    const [subject, SetSubject] = useState([]);
+    useEffect(() => {
+        axios.get(`http://localhost/ReactProject/api/api-fetch-sunject.php`).then(res => {
+            SetSubject(res.data)
+        });
+    },[])
+
+    const [role, SetRole] = useState([]);
+    useEffect(() => {
+        axios.get(`http://localhost/ReactProject/api/api-fetch-role.php`).then(res => {
+            SetRole(res.data)
+        });
+    },[])
+
+
+
     return (
         <>
             <Header />
@@ -66,59 +91,62 @@ function studen() {
                 </div>
                 <div className="col-md-9">
                     <div className="container mt-5 justify-content-center d-flex">
-                        <form class="row g-3" onSubmit={save}>
-                            <div class="mb-3">
-                                <label for="exampleFormControlInput1" class="form-label">শিক্ষকের নাম</label>
-                                <input type="text" class="form-control" value={teacher.name} placeholder="Hsc 2025" onChange={input} name='name' />
+                        <form className="row g-3" onSubmit={save}>
+                            <div className="mb-3">
+                                <label for="exampleFormControlInput1" className="form-label">শিক্ষকের নাম</label>
+                                <input type="text" className="form-control" value={teacher.name} placeholder="Hsc 2025" onChange={input} name='name' />
                             </div>
-                            <div class="mb-3">
-                                <label for="exampleFormControlTextarea1" class="form-label">শিক্ষকের  ফি</label>
-                                <input type="text" class="form-control" value={teacher.fee} placeholder="Course Fee" name='fee' onChange={input} />
+                            <div className="mb-3">
+                                <label for="exampleFormControlTextarea1" className="form-label">শিক্ষকের  ফি</label>
+                                <input type="text" className="form-control" value={teacher.fee} placeholder="Course Fee" name='fee' onChange={input} />
                             </div>
-                            <div class="mb-3">
-                                <label for="exampleFormControlTextarea1" class="form-label">শ্রেনি</label>
+                            <div className="mb-3">
+                                <label for="exampleFormControlTextarea1" className="form-label">শ্রেনি</label>
                                 <Form.Select aria-label="Default select example" value={teacher.class} name='class' onChange={input}>
                                     <option>Open this select menu</option>
-                                    <option value="1">SSC</option>
-                                    <option value="2">HSC</option>
-                                    <option value="3">Ten</option>
-                                    <option value="3">Nine</option>
+                                    {clases.map((item, index) => (
+                                        <option key={index} value={item.class_id}>
+                                            {item.class_name}
+                                        </option>
+                                    ))}
                                 </Form.Select>
                             </div>
-                            <div class="mb-3">
-                                <label for="exampleFormControlTextarea1" class="form-label">সাবজেক্ট</label>
+                            <div className="mb-3">
+                                <label for="exampleFormControlTextarea1" className="form-label">সাবজেক্ট</label>
                                 <Form.Select aria-label="Default select example" name='subject' value={teacher.subject} onChange={input}>
                                     <option>Open this select menu</option>
-                                    <option value="1">SSC</option>
-                                    <option value="2">HSC</option>
-                                    <option value="3">Ten</option>
-                                    <option value="3">Nine</option>
+                                    {subject.map((item, index) => (
+                                        <option key={index} value={item.sub_id}>
+                                            {item.sub_name}
+                                        </option>
+                                    ))}
                                 </Form.Select>
                             </div>
-                            <div class="mb-3">
-                                <label for="exampleFormControlTextarea1" class="form-label">রোল</label>
+                            <div className="mb-3">
+                                <label for="exampleFormControlTextarea1" className="form-label">ইউজার রোল</label>
                                 <Form.Select aria-label="Default select example" name='role' value={teacher.role} onChange={input}>
                                     <option>Open this select menu</option>
-                                    <option value="1">SSC</option>
-                                    <option value="2">HSC</option>
-                                    <option value="3">Ten</option>
-                                    <option value="3">Nine</option>
+                                    {role.map((item, index) => (
+                                        <option key={index} value={item.role_id}>
+                                            {item.role_name}
+                                        </option>
+                                    ))}
                                 </Form.Select>
                             </div>
-                            <div class="mb-3">
-                                <label for="staticEmail2" class="form-label">নাম্বার</label>
-                                <input type="text" class="form-control" id="inputPassword2" placeholder="Number" name='number' value={teacher.number} onChange={input} />
+                            <div className="mb-3">
+                                <label for="staticEmail2" className="form-label">নাম্বার</label>
+                                <input type="text" className="form-control" id="inputPassword2" placeholder="Number" name='number' value={teacher.number} onChange={input} />
                             </div>
-                            <div class="mb-3">
-                                <label for="staticEmail2" class="form-label">ইউজার নাম</label>
-                                <input type="text" class="form-control" id="inputPassword2" placeholder="username" name='username' value={teacher.username} onChange={input} />
+                            <div className="mb-3">
+                                <label for="staticEmail2" className="form-label">ইউজার নাম</label>
+                                <input type="text" className="form-control" id="inputPassword2" placeholder="username" name='username' value={teacher.username} onChange={input} />
                             </div>
-                            <div class="mb-3">
-                                <label for="staticEmail2" class="form-label">পাসওয়ার্ড</label>
-                                <input type="text" class="form-control" id="inputPassword2" placeholder="username" name='password' value={teacher.password} onChange={input} />
+                            <div className="mb-3">
+                                <label for="staticEmail2" className="form-label">পাসওয়ার্ড</label>
+                                <input type="text" className="form-control" id="inputPassword2" placeholder="username" name='password' value={teacher.password} onChange={input} />
                             </div>
-                            <div class="col-auto">
-                                <button type="submit" class="btn btn-primary mb-3">Login</button>
+                            <div className="col-auto">
+                                <button type="submit" className="btn btn-primary mb-3">Login</button>
                             </div>
                         </form>
                     </div>

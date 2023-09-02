@@ -7,7 +7,7 @@ import { useParams } from 'react-router-dom';
 
 function teacherEdit() {
 
-    let {id} = useParams();
+    let { id } = useParams();
 
     const [teacher, setTeacher] = useState({})
 
@@ -27,10 +27,10 @@ function teacherEdit() {
             username: teacher.tea_username,
             password: teacher.tea_password,
         }
-        console.log(id);
         axios.put(`http://localhost/ReactProject/api/api-update-teacher.php?id=${id}`, data).then(res => {
-            alert("successful")
-            
+            alert("successful");
+            use
+
         });
 
     }
@@ -38,9 +38,31 @@ function teacherEdit() {
         axios.get(`http://localhost/ReactProject/api/api-fetch-singleteacher.php?id=${id}`).then(res => {
             console.log(res);
             setTeacher(res.data)
-            
+
         });
     }, [id])
+
+
+    const [clases, setClass] = useState([]);
+    useEffect(() => {
+        axios.get(`http://localhost/ReactProject/api/api-fetch-class.php`).then(res => {
+            setClass(res.data)
+        });
+    }, [])
+
+    const [subject, SetSubject] = useState([]);
+    useEffect(() => {
+        axios.get(`http://localhost/ReactProject/api/api-fetch-sunject.php`).then(res => {
+            SetSubject(res.data)
+        });
+    }, [])
+
+    const [role, SetRole] = useState([]);
+    useEffect(() => {
+        axios.get(`http://localhost/ReactProject/api/api-fetch-role.php`).then(res => {
+            SetRole(res.data)
+        });
+    }, [])
     return (
         <>
             <Header />
@@ -63,30 +85,33 @@ function teacherEdit() {
                                 <label for="exampleFormControlTextarea1" class="form-label">শ্রেনি</label>
                                 <Form.Select aria-label="Default select example" value={teacher.tea_class} name='tea_class' onChange={input}>
                                     <option>Open this select menu</option>
-                                    <option value="1">SSC</option>
-                                    <option value="2">HSC</option>
-                                    <option value="3">Ten</option>
-                                    <option value="3">Nine</option>
+                                    {clases.map((item, index) => (
+                                        <option key={index} value={item.class_id}>
+                                            {item.class_name}
+                                        </option>
+                                    ))}
                                 </Form.Select>
                             </div>
                             <div class="mb-3">
                                 <label for="exampleFormControlTextarea1" class="form-label">সাবজেক্ট</label>
                                 <Form.Select aria-label="Default select example" name='tea_subject' value={teacher.tea_subject} onChange={input}>
                                     <option>Open this select menu</option>
-                                    <option value="1">SSC</option>
-                                    <option value="2">HSC</option>
-                                    <option value="3">Ten</option>
-                                    <option value="3">Nine</option>
+                                    {subject.map((item, index) => (
+                                        <option key={index} value={item.sub_id}>
+                                            {item.sub_name}
+                                        </option>
+                                    ))}
                                 </Form.Select>
                             </div>
                             <div class="mb-3">
                                 <label for="exampleFormControlTextarea1" class="form-label">রোল</label>
-                                <Form.Select aria-label="Default select example" name='role' value={teacher.role} onChange={input}>
+                                <Form.Select aria-label="Default select example" name='role' value={teacher.tea_role} onChange={input}>
                                     <option>Open this select menu</option>
-                                    <option value="1">SSC</option>
-                                    <option value="2">HSC</option>
-                                    <option value="3">Ten</option>
-                                    <option value="3">Nine</option>
+                                    {role.map((item, index) => (
+                                        <option key={index} value={item.role_id}>
+                                            {item.role_name}
+                                        </option>
+                                    ))}
                                 </Form.Select>
                             </div>
                             <div class="mb-3">
