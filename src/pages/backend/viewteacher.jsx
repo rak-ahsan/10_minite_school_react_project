@@ -1,30 +1,29 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import Sidebar from './sidebar';
-import Header from '../../component/heback';
+import Sidebar from './sidebar'
+import Header from '../../component/heback'
 
 const ViewTeacher = () => {
     const [teacher, setTeacher] = useState([]);
-
-    const deleteTeacher = (e, tea_id) => {
-        e.preventDefault();
-        const click = e.currentTarget;
-        if (window.confirm("Are You Sure?")) {
-            axios.delete(`http://localhost/ReactProject/api/api-teacher.php?id=${tea_id}`).then(res => {
-                alert("successful");
-                click.closest("tr").remove();
-            });
-        } else {
-
-        }
-    }
-
     useEffect(() => {
         axios.get(`http://localhost/ReactProject/api/api-fetch-allteacher.php`).then(res => {
             setTeacher(res.data);
         });
     }, []);
+
+    
+    const deleteTeacher = (e,tea_id) => {
+        const click = e.currentTarget;
+        e.preventDefault();
+
+        if(confirm("Are You Sure?")){
+        axios.get(`http://localhost/ReactProject/api/api-teacher.php?id=${tea_id}`).then(res => {
+            alert("Done")
+            click.closest("tr").remove()
+        })}else{}
+    }
+    
 
     return (
         <>
