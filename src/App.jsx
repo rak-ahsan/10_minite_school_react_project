@@ -13,6 +13,11 @@ import Studen from './pages/backend/studen.jsx'
 import Addteacher from './pages/backend/addteacher.jsx'
 import Viewteacher from './pages/backend/viewteacher.jsx'
 import Editteaacher from './pages/backend/Editteaacher.jsx'
+import Addstudent from './pages/backend/student/addstudent.jsx'
+import Viewstudent from './pages/backend/student/viewstudent.jsx'
+import Editstudent from './pages/backend/student/Editstudent.jsx'
+
+
 
 
 
@@ -20,23 +25,30 @@ import Editteaacher from './pages/backend/Editteaacher.jsx'
 
 function App() {
   return (
-      <Routes>
-        <Route path='/' element={<Nav />} />
-        <Route path='/home' element={<Home />} />
-        <Route path='/footer' element={<Footer />} />
-        <Route path='/hsc' element={<Hsc />} />
-        <Route path='/nine' element={<Hsc />} />
-        <Route path='/ten' element={<Hsc />} />
-        <Route path='/login' element={<Login />} />
-        <Route path='/dashboard' element={<Dashboard />} />
-        <Route path='/Hscbatch' element={<Hscbatch />} />
-        <Route path='/Sidebar' element={<Sidebar />} />
-        <Route path='/studen' element={<Studen />} />
-        <Route path='/addteacher' element={<Addteacher />} />
-        <Route path='/viewteacher' element={<Viewteacher />} />
-        <Route path='/teacher/:id/edit' element={<Editteaacher />} />
-        <Route path='*' element={<Npage />} />
-      </Routes>
+    <Routes>
+      <Route path='/' element={<Nav />} />
+      <Route path='/home' element={<Home />} />
+      <Route path='/footer' element={<Footer />} />
+      <Route path='/hsc' element={<Hsc />} />
+      <Route path='/nine' element={<Hsc />} />
+      <Route path='/ten' element={<Hsc />} />
+      <Route path='/login' element={<Login />} />
+      <Route path='/dashboard' element={<Dashboard />} />
+      <Route path='/Hscbatch' element={<Hscbatch />} />
+      <Route path='/Sidebar' element={<Sidebar />} />
+      <Route path='/studen' element={<Studen />} />
+      <Route path='*' element={<Npage />} />
+
+      {/* for backend */}
+      <Route path='/addteacher' element={<Addteacher />} />
+      <Route path='/viewteacher' element={<Viewteacher />} />
+      <Route path='/teacher/:id/edit' element={<Editteaacher />} />
+
+      {/* for student */}
+      <Route path='/student' element={<Addstudent />} />
+      <Route path='/viewstudent' element={<Viewstudent />} />
+      <Route path='/editstudent/:id' element={<Editstudent />} />
+    </Routes>
   )
 }
 

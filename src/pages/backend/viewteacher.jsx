@@ -3,12 +3,17 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Sidebar from './sidebar'
 import Header from '../../component/heback'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons'
+
+
 
 const ViewTeacher = () => {
     const [teacher, setTeacher] = useState([]);
     useEffect(() => {
         axios.get(`http://localhost/ReactProject/api/api-fetch-allteacher.php`).then(res => {
             setTeacher(res.data);
+            console.log(res);
         });
     }, []);
 
@@ -20,11 +25,10 @@ const ViewTeacher = () => {
         if (confirm("Are You Sure?")) {
             axios.get(`http://localhost/ReactProject/api/api-teacher.php?id=${tea_id}`).then(res => {
                 alert("Done")
-                click.closest("tr").remove()
+                click.closest("tr").remove();
             })
         } else { }
     }
-
 
     return (
         <>
@@ -48,22 +52,24 @@ const ViewTeacher = () => {
                                     </tr>
                                 </thead>
                                 <tbody>
-                                        {teacher.length > 0 && (
-                                            teacher.map((item, index) => (
-                                                <tr key={index}>
-                                                    <td>{item.tea_name}</td>
-                                                    <td>{item.tea_fee}</td>
-                                                    <td>{item.tea_class}</td>
-                                                    <td>{item.tea_subject}</td>
-                                                    <td>{item.tea_number}</td>
-                                                    <td>
-                                                        <Link to={`/teacher/${item.tea_id}/edit`} className='btn btn-success'>Update</Link>
-                                                        <button className='btn btn-danger' onClick={(e) => deleteTeacher(e, item.tea_id)}>Delete</button>
-                                                    </td>
-                                                </tr>
-                                            ))
-                                        )}
-                                    </tbody>
+                                    {teacher.length > 0 && (
+                                        teacher.map((item, index) => (
+                                            <tr key={index}>
+                                                <td>{item.tea_name}</td>
+                                                <td>{item.tea_fee}</td>
+                                                <td>{item.class_name}</td>
+                                                <td>{item.sub_name}</td>
+                                                <td>{item.tea_number}</td>
+                                                <td>
+                                                    <Link to={`/teacher/${item.tea_id}/edit`} className='btn btn-success mx-2'><FontAwesomeIcon icon={faPen} /></Link>
+                                                </td>
+                                                <td>
+                                                    <button className='btn btn-danger' onClick={(e) => deleteTeacher(e, item.tea_id)}><FontAwesomeIcon icon={faTrash} style={{ color: "#ffffff", }} /></button>
+                                                </td>
+                                            </tr>
+                                        ))
+                                    )}
+                                </tbody>
                             </table>
                         </div>
                     </div>

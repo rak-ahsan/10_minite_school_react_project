@@ -29,8 +29,6 @@ function teacherEdit() {
         }
         axios.put(`http://localhost/ReactProject/api/api-update-teacher.php?id=${id}`, data).then(res => {
             alert("successful");
-            use
-
         });
 
     }

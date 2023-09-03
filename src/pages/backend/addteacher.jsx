@@ -3,6 +3,8 @@ import Form from 'react-bootstrap/Form';
 import Sidebar from './sidebar'
 import Header from '../../component/heback'
 import axios from 'axios'
+import Swal from 'sweetalert2';
+
 
 function studen() {
 
@@ -51,7 +53,11 @@ function studen() {
         }
         console.log(data);
         axios.post(`http://localhost/ReactProject/api/api-insert-teacher.php`, data).then(res => {
-            alert("Data Inserted");
+            Swal.fire(
+                'Teacher Record Stored Successfully!',
+                '',
+                'success'
+              )
             reset()
 
         });
@@ -92,16 +98,16 @@ function studen() {
                 <div className="col-md-9">
                     <div className="container mt-5 justify-content-center d-flex">
                         <form className="row g-3" onSubmit={save}>
-                            <div className="mb-3">
-                                <label for="exampleFormControlInput1" className="form-label">শিক্ষকের নাম</label>
+                            <div className="mb-3 col-md-6">
+                                <label htmlFor="exampleFormControlInput1" className="form-label">শিক্ষকের নাম</label>
                                 <input type="text" className="form-control" value={teacher.name} placeholder="Hsc 2025" onChange={input} name='name' />
                             </div>
-                            <div className="mb-3">
-                                <label for="exampleFormControlTextarea1" className="form-label">শিক্ষকের  ফি</label>
+                            <div className="mb-3 col-md-6">
+                                <label htmlFor="exampleFormControlTextarea1" className="form-label">শিক্ষকের  ফি</label>
                                 <input type="text" className="form-control" value={teacher.fee} placeholder="Course Fee" name='fee' onChange={input} />
                             </div>
-                            <div className="mb-3">
-                                <label for="exampleFormControlTextarea1" className="form-label">শ্রেনি</label>
+                            <div className="mb-3 col-md-6">
+                                <label htmlFor="exampleFormControlTextarea1" className="form-label">শ্রেনি</label>
                                 <Form.Select aria-label="Default select example" value={teacher.class} name='class' onChange={input}>
                                     <option>Open this select menu</option>
                                     {clases.map((item, index) => (
@@ -111,8 +117,8 @@ function studen() {
                                     ))}
                                 </Form.Select>
                             </div>
-                            <div className="mb-3">
-                                <label for="exampleFormControlTextarea1" className="form-label">সাবজেক্ট</label>
+                            <div className="mb-3 col-md-6">
+                                <label htmlFor="exampleFormControlTextarea1" className="form-label">সাবজেক্ট</label>
                                 <Form.Select aria-label="Default select example" name='subject' value={teacher.subject} onChange={input}>
                                     <option>Open this select menu</option>
                                     {subject.map((item, index) => (
@@ -122,8 +128,8 @@ function studen() {
                                     ))}
                                 </Form.Select>
                             </div>
-                            <div className="mb-3">
-                                <label for="exampleFormControlTextarea1" className="form-label">ইউজার রোল</label>
+                            <div className="mb-3 col-md-6">
+                                <label htmlFor="exampleFormControlTextarea1" className="form-label">ইউজার রোল</label>
                                 <Form.Select aria-label="Default select example" name='role' value={teacher.role} onChange={input}>
                                     <option>Open this select menu</option>
                                     {role.map((item, index) => (
@@ -133,16 +139,16 @@ function studen() {
                                     ))}
                                 </Form.Select>
                             </div>
-                            <div className="mb-3">
-                                <label for="staticEmail2" className="form-label">নাম্বার</label>
+                            <div className="mb-3 col-md-6">
+                                <label htmlFor="staticEmail2" className="form-label">নাম্বার</label>
                                 <input type="text" className="form-control" id="inputPassword2" placeholder="Number" name='number' value={teacher.number} onChange={input} />
                             </div>
-                            <div className="mb-3">
-                                <label for="staticEmail2" className="form-label">ইউজার নাম</label>
+                            <div className="mb-3 col-md-6">
+                                <label htmlFor="staticEmail2" className="form-label">ইউজার নাম</label>
                                 <input type="text" className="form-control" id="inputPassword2" placeholder="username" name='username' value={teacher.username} onChange={input} />
                             </div>
-                            <div className="mb-3">
-                                <label for="staticEmail2" className="form-label">পাসওয়ার্ড</label>
+                            <div className="mb-3 col-md-6">
+                                <label htmlFor="staticEmail2" className="form-label">পাসওয়ার্ড</label>
                                 <input type="text" className="form-control" id="inputPassword2" placeholder="username" name='password' value={teacher.password} onChange={input} />
                             </div>
                             <div className="col-auto">
@@ -150,7 +156,9 @@ function studen() {
                             </div>
                         </form>
                     </div>
+                    
                 </div>
+                
             </div>
 
         </>

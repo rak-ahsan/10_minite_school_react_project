@@ -1,0 +1,7 @@
+.hov a:hover{
+  background-color: blueviolet;
+  color: white;
+  padding: 10px 5px;
+  border-radius: 20px;
+  text-align: center;
+  transition: .5s}
