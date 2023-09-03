@@ -4,9 +4,9 @@ header('Access-Control-Allow-Origin: *');
 
 include "config.php";
 
-$service_id = $_GET['emp_id'];
+$id = $_GET['id'];
 
-$sql = "SELECT * FROM emp WHERE emp_id = {$service_id}";
+$sql = "SELECT * FROM student_add WHERE stu_id = {$id}";
 
 $result = mysqli_query($conn, $sql) or die("SQL Query Failed.");
 

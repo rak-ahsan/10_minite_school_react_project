@@ -5,7 +5,11 @@ header('Access-Control-Allow-Origin: *');
 
 include "config.php";
 
-$sql = "SELECT * FROM teacher ORDER BY tea_id DESC;
+$sql = "SELECT * FROM teacher 
+Join subject on subject.sub_id = teacher.tea_subject
+Join class on class.class_id = teacher.tea_class
+
+ORDER BY tea_id DESC;
 ";
 $result = mysqli_query($conn, $sql) or die("SQL Query Failed.");
 

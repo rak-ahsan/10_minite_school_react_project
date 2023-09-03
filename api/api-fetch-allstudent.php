@@ -5,12 +5,11 @@ header('Access-Control-Allow-Origin: *');
 
 include "config.php";
 
-$sql = "SELECT * 
-FROM emp AS e
-JOIN location AS l ON l.loc_id = e.emparea
-JOIN service AS s ON s.id = e.empcata
-ORDER BY e.emp_id DESC;
-;";
+$sql = "SELECT * FROM student_add 
+Join class on class.class_id = student_add.studentclass
+
+ORDER BY stu_id DESC;
+";
 $result = mysqli_query($conn, $sql) or die("SQL Query Failed.");
 
 if(mysqli_num_rows($result) > 0 ){

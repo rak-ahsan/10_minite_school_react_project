@@ -6,11 +6,11 @@ header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,
 
 $data = json_decode(file_get_contents("php://input"), true);
 
-$student_id = $_GET['emp_id'];
+$student_id = $_GET['id'];
 
 include "config.php";
 
-$sql = "DELETE FROM emp WHERE emp_id = {$student_id}";
+$sql = "DELETE FROM student_add WHERE stu_id = {$student_id}";
 
 if(mysqli_query($conn, $sql)){
 	
