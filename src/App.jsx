@@ -16,6 +16,8 @@ import Editteaacher from './pages/backend/Editteaacher.jsx'
 import Addstudent from './pages/backend/student/addstudent.jsx'
 import Viewstudent from './pages/backend/student/viewstudent.jsx'
 import Editstudent from './pages/backend/student/Editstudent.jsx'
+import Addcourse from './pages/backend/courses/addcourse.jsx'
+
 
 
 
@@ -48,6 +50,10 @@ function App() {
       <Route path='/student' element={<Addstudent />} />
       <Route path='/viewstudent' element={<Viewstudent />} />
       <Route path='/editstudent/:id' element={<Editstudent />} />
+
+      {/* for course */}
+      <Route path='/addcourse' element={<Addcourse />} />
+
     </Routes>
   )
 }

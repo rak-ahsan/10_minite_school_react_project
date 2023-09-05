@@ -53,7 +53,6 @@ const AddStudent = () => {
             studentclass: student.studentclass,
             studentrole: student.studentrole,
         }
-        console.log(data);
         axios.post(`http://localhost/ReactProject/api/api-insert-student.php`, data).then(res => {
             Swal.fire(
                 'Student Record Stored Successfully!',
@@ -95,6 +94,7 @@ const AddStudent = () => {
                                 placeholder="শিক্ষার্থী নাম"
                                 type="text"
                                 name="studentname"
+                                className = "col-md-4"
                                 onChange={input}
                                 value={student.studentname}
                             />
@@ -104,12 +104,14 @@ const AddStudent = () => {
                                 placeholder="শিক্ষার্থী নাম্বার"
                                 type="text"
                                 name="studentnumber"
+                                className = "col-md-4"
                                 onChange={input}
                                 value={student.studentnumber}
                             />
                             <Frominp
                                 title="শিক্ষার্থী ইমেইল"
                                 placeholder="শিক্ষার্থী ইমেইল"
+                                className = "col-md-4"
                                 type="text"
                                 name="studentemail"
                                 onChange={input}
@@ -127,6 +129,7 @@ const AddStudent = () => {
                                 title="UserName"
                                 placeholder="UserName"
                                 type="text"
+                                className = "col-md-6"
                                 name="studentusername"
                                 onChange={input}
                                 value={student.studentusername}
@@ -135,6 +138,7 @@ const AddStudent = () => {
                                 title="Password"
                                 placeholder="Password"
                                 type="text"
+                                className = "col-md-6"
                                 name="studentpassword"
                                 onChange={input}
                                 value={student.studentpassword}
