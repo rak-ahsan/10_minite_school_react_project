@@ -36,6 +36,7 @@ const Tables = (props) => {
                                     <td>{item[props.n8]}</td>
                                     <td>{item[props.n9]}</td>
                                     <td>{item[props.n10]}</td>
+                                    <td><img src={`${props.path}/${props.imageName}`} alt={props.imageName} /></td>
                                     <td>
                                         <Link to={`/${props.link}/${item[props.id]}`} className='btn btn-success mx-2'><FontAwesomeIcon icon=   {faPen} />
                                         </Link>

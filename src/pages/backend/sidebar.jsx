@@ -17,11 +17,12 @@ const sidebar = () => {
       <div className="accordion-item">
         <h2 className="accordion-header">
           <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-            Running Courses
+            Courses
           </button>
         </h2>
-        <div id="flush-collapseTwo" className="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-          <div className="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> className. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+        <div id="flush-collapseTwo" className="accordion-collapse collapse hov" data-bs-parent="#accordionFlushExample">
+          <div className="accordion-body"><Link to={"/courseadd"} className='nav-link'>Add</Link></div>
+          <div className="accordion-body"><Link to={"/viewcourse"} className='nav-link'> course</Link></div>
         </div>
       </div>
       <div className="accordion-item">
@@ -51,8 +52,8 @@ const sidebar = () => {
           </button>
         </h2>
         <div id="flush-collapseFive" className="accordion-collapse collapse hov" data-bs-parent="#accordionFlushExample">
-          <div className="accordion-body"><Link to={"/Addteacher"} className='nav-link'>Add A Teacher</Link></div>
-          <div className="accordion-body"><Link to={"/viewteacher"} className='nav-link'>View Teacher</Link></div>
+          <div className="accordion-body"><Link to={"/Addteacher"} className='nav-link'>Add </Link></div>
+          <div className="accordion-body"><Link to={"/viewteacher"} className='nav-link'>View </Link></div>
         </div>
       </div>
       <div className="accordion-item">
@@ -62,8 +63,8 @@ const sidebar = () => {
           </button>
         </h2>
         <div id="flush-collapsesix" className="accordion-collapse collapse hov" data-bs-parent="#accordionFlushExample">
-          <div className="accordion-body"><Link to={"/student"} className='nav-link'>Add Student</Link></div>
-          <div className="accordion-body"><Link to={"/viewstudent"} className='nav-link'>View Student</Link></div>
+          <div className="accordion-body"><Link to={"/student"} className='nav-link'>Add </Link></div>
+          <div className="accordion-body"><Link to={"/viewstudent"} className='nav-link'>View </Link></div>
         </div>
       </div>
     </div>
