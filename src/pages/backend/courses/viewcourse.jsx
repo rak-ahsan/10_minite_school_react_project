@@ -44,15 +44,14 @@ const viewcourse = () => {
                         n3={"courseduretion"}
                         n4={"couseclass"}
                         n5={"coursesubject"}
-                        n6={"courseimg"}
 
                         // for image
-                        path={'../../../../../api/course'}
-                        imageName={"courseimg"}
+                        path={'images'}
+                        imageName={`courseimg`}
 
                         // for link and passing id edit option
                         link={"editstudent"}
-                        id={"stu_id"}
+                        id={"course_id"}
 
                         dlt={''}
 
