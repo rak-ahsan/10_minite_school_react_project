@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import Header from '../../../component/heback';
-import Sidebar from '../sidebar';
-import Frominp from '../../../component/frominp';
-import Bntsubmit from '../../../component/bntsubmit';
 import Form from 'react-bootstrap/Form';
 import axios from 'axios'
 import Swal from 'sweetalert2';
+import Header from '../component/he';
+import Frominp from "../component/frominp"
+import Bntsubmit from "../component/bntsubmit"
 
-const AddStudent = () => {
+const studentsignup = () => {
 
     const [student, setStudent] = useState({
         studentname: '',
@@ -51,15 +50,16 @@ const AddStudent = () => {
             studentusername: student.studentusername,
             studentpassword: student.studentpassword,
             studentclass: student.studentclass,
-            studentrole: student.studentrole,
+            studentrole: '4',
         }
+        console.log();
         axios.post(`http://localhost/ReactProject/api/api-insert-student.php`, data).then(res => {
             Swal.fire(
                 'Student Record Stored Successfully!',
                 '',
                 'success'
               )
-
+            console.log(res);
             reset()
 
         });
@@ -78,15 +78,11 @@ const AddStudent = () => {
             SetRole(res.data)
         });
     },[])
-
-    return (
-        <>
+  return (
+    <>
             <Header />
-            <div className="container d-flex">
-                <div className="col-md-3">
-                    <Sidebar />
-                </div>
-                <div className="col-md-9">
+            <div className="container d-flex justify-content-center">
+                <div className="col-md-10">
                     <div className="container mt-3 justify-content-center d-flex">
                         <form className="row g-3" onSubmit={save} >
                             <Frominp
@@ -156,13 +152,8 @@ const AddStudent = () => {
                             </div>
                             <div className="mb-3 col-md-6">
                                 <label htmlFor="exampleFormControlTextarea1" className="form-label">ইউজার রোল</label>
-                                <Form.Select aria-label="Default select example" name='studentrole' value={student.studentrole} onChange={input}>
-                                    <option>Open this select menu</option>
-                                    {role.map((item, index) => (
-                                        <option key={index} value={item.role_id}>
-                                            {item.role_name}
-                                        </option>
-                                    ))}
+                                <Form.Select aria-label="Default select example" name='studentrole' disabled>
+                                        <option value='4'>student</option>
                                 </Form.Select>
                             </div>
                             <Bntsubmit text="ADD STUDENT"  className="btn-success" type="submit" />
@@ -171,7 +162,7 @@ const AddStudent = () => {
                 </div >
             </div >
         </>
-    );
-};
+  )
+}
 
-export default AddStudent;
+export default studentsignup

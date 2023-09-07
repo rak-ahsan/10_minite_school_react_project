@@ -70,14 +70,12 @@ const viewstudent = () => {
                         // for map function
                         name={student}
 
-
                         // for map TD
                         n1={"studentname"}
                         n2={"studentnumber"}
                         n3={"studentemail"}
                         n4={"class_name"}
                         n5={"studentaddress"}
-
 
                         // for link and passing id edit option
                         link={"editstudent"}

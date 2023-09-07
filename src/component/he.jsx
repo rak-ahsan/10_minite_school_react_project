@@ -80,8 +80,11 @@ function nav() {
                                     16910
                                 </Link>
                             </div>
-                            <div className="lgbtn login p-1 d-flex justify-contents-center align-items-center">
+                            <div className="lgbtn login p-1 mx-2 d-flex justify-contents-center align-items-center">
                                 <Link to="/login" className="nav-link">লগ-ইন</Link>
+                            </div>
+                            <div className="lgbtn login p-1   d-flex justify-contents-center align-items-center">
+                                <Link to="/signup" className="nav-link">সাইন-আপ</Link>
                             </div>
 
                         </div>

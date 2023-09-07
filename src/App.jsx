@@ -17,8 +17,9 @@ import Viewstudent from './pages/backend/student/viewstudent.jsx'
 import Editstudent from './pages/backend/student/Editstudent.jsx'
 import Course from './pages/backend/courses/course.jsx'
 import Viewcourse from './pages/backend/courses/viewcourse.jsx'
-
-
+import Studentsignup from './pages/studentsignup.jsx'
+import Test from './component/test.jsx'
+import Textview from './component/textview.jsx'
 
 
 
@@ -40,6 +41,10 @@ function App() {
       <Route path='/Hscbatch' element={<Hscbatch />} />
       <Route path='/Sidebar' element={<Sidebar />} />
       <Route path='*' element={<Npage />} />
+     
+
+      {/* student studentsignup */}
+      <Route path='/signup' element={<Studentsignup />} />
 
       {/* for backend */}
       <Route path='/addteacher' element={<Addteacher />} />
@@ -54,6 +59,11 @@ function App() {
       {/* for course */}
       <Route path='/courseadd' element={<Course />} />
       <Route path='/viewcourse' element={<Viewcourse />} />
+
+
+      {/* test */}
+      <Route path='/Test' element={<Test />} />
+      <Route path='/Textview' element={<Textview />} />
     </Routes>
   )
 }
