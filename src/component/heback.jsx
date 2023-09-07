@@ -58,7 +58,7 @@ function nav() {
                                 </ul>
                             </li> */}
                             <li className="nav-item">
-                                <Link className="nav-link active" to="/studen">কোর্স এড করুন</Link>
+                                <Link className="nav-link active" to="/courseadd">কোর্স এড করুন</Link>
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link active" to="/Addteacher">শিক্ষক যুক্ত করুন</Link>
