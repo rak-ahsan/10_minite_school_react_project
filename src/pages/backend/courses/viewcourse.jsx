@@ -45,6 +45,8 @@ const viewcourse = () => {
                         n4={"couseclass"}
                         n5={"coursesubject"}
 
+                        
+                        con={1}
                         // for image
                         path={'images'}
                         imageName={`courseimg`}

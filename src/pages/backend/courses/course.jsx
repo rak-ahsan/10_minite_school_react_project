@@ -8,7 +8,7 @@ import BtnSubmit from '../../../component/bntsubmit';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router-dom';
 
-const course = () => {
+const course = (props) => {
     const navigate = useNavigate();
 
     const [course, setCourse] = useState({

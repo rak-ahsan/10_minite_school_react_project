@@ -20,6 +20,7 @@ import Viewcourse from './pages/backend/courses/viewcourse.jsx'
 import Studentsignup from './pages/studentsignup.jsx'
 import Test from './component/test.jsx'
 import Textview from './component/textview.jsx'
+import Buy from './pages/buy.jsx'
 
 
 
@@ -64,6 +65,12 @@ function App() {
       {/* test */}
       <Route path='/Test' element={<Test />} />
       <Route path='/Textview' element={<Textview />} />
+
+
+
+      <Route path='/buy/:id' element={<Buy />} />
+
+
     </Routes>
   )
 }
