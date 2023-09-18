@@ -12,12 +12,13 @@ $city = $data['city'];
 $country = $data['country'];
 $paymentMethod = $data['paymentMethod'];
 $number = $data['number'];
+$course = $data['course'];
 
 include "config.php";
 
-$sql = "INSERT INTO booking(name, Address,city,country,paymentMethod,number) 
+$sql = "INSERT INTO booking(name, Address,city,country,paymentMethod,number,course) 
 VALUES 
-('$name','$Address','$city','$country','$paymentMethod','$number')";
+('$name','$Address','$city','$country','$paymentMethod','$number','$course')";
 
 if(mysqli_query($conn, $sql)){
 	echo json_encode(array('message' => 'Student Record Inserted.', 'status' => true));

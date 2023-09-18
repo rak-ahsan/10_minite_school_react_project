@@ -33,7 +33,8 @@ const buy = () => {
             city: payment.city,
             country: payment.country,
             paymentMethod: payment.paymentMethod,
-            number: payment.number
+            number: payment.number,
+            course:id
         }
         console.log(data);
         axios.post(`http://localhost/ReactProject/api/api-insert-booking.php`, data).then(res => {

@@ -17,7 +17,8 @@ $imageName = '';
 if ($image['name'] != '') {
     $imageName = 'user_' . time() . '_' . rand(100000, 10000000) . '.' . pathinfo($image['name'], PATHINFO_EXTENSION);
 }
-
+0
+........
 $sql = "INSERT INTO service(service_name ,location ,serfee,photo) VALUES ('$service_name' ,'$location_name','$serfee','$imageName')";
 
 if (mysqli_query($conn, $sql)) {
@@ -28,7 +29,5 @@ if (mysqli_query($conn, $sql)) {
 } else {
     echo json_encode(array('message' => 'Service Record Not Inserted.', 'status' => false));
 }
-		
-
 ?>
 

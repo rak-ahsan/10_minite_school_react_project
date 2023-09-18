@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 17, 2023 at 07:58 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Generation Time: Sep 18, 2023 at 08:44 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,18 +34,20 @@ CREATE TABLE `booking` (
   `city` varchar(50) NOT NULL,
   `country` varchar(50) NOT NULL,
   `paymentMethod` varchar(50) NOT NULL,
-  `number` varchar(50) NOT NULL
+  `number` varchar(50) NOT NULL,
+  `course` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `booking`
 --
 
-INSERT INTO `booking` (`bkid`, `name`, `Address`, `city`, `country`, `paymentMethod`, `number`) VALUES
-(1, '', '', '', '', '', ''),
-(2, 'RAKIBUL', 'maa villa, college road', 'Betagi', 'United States', 'Debit card', '017584'),
-(3, '', '', '', '', '', ''),
-(4, 'MD.', 'maa villa,college road', 'Betagi', 'United States', 'Credit card', '01775566772');
+INSERT INTO `booking` (`bkid`, `name`, `Address`, `city`, `country`, `paymentMethod`, `number`, `course`) VALUES
+(14, 'Sm', 'o', 'o', 'United States', 'Credit card', '01775566887', '3'),
+(15, '', '', '', '', '', '', ''),
+(16, 'Sm', '185/1 saidurs tower', 'mirpur', 'United States', 'Bkash', '01775566887', '3'),
+(17, '', '', '', '', '', '', ''),
+(18, 'bisty', '185/1 saidurs tower', 'mirpur', 'United States', 'Debit card', '01775566887', '4');
 
 -- --------------------------------------------------------
 
@@ -91,9 +93,9 @@ CREATE TABLE `course` (
 --
 
 INSERT INTO `course` (`course_id`, `coursename`, `coursefee`, `courseduretion`, `couseclass`, `coursesubject`, `courseimg`) VALUES
-(1, 'hsc', 50, '3', 6, 8, 'user_1694014671_1570245.webp'),
-(2, 't', 50, 'f', 5, 8, 'user_1694015698_2570606.ico'),
-(3, 'HSC Batch 2025', 5000, '3 months', 1, 8, 'user_1694881668_4917790.jpg');
+(3, 'HSC Batch 2025', 5000, '3 months', 1, 8, 'user_1694881668_4917790.jpg'),
+(4, 'digital marketing ', 500, '6 months', 2, 9, 'user_1695012167_2972555.webp'),
+(5, 'wdpf', 500, '6 months', 3, 6, '');
 
 -- --------------------------------------------------------
 
@@ -247,7 +249,7 @@ ALTER TABLE `teacher`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `bkid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `bkid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `class`
@@ -259,7 +261,7 @@ ALTER TABLE `class`
 -- AUTO_INCREMENT for table `course`
 --
 ALTER TABLE `course`
-  MODIFY `course_id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `course_id` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `role`

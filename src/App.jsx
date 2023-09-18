@@ -21,7 +21,8 @@ import Studentsignup from './pages/studentsignup.jsx'
 import Test from './component/test.jsx'
 import Textview from './component/textview.jsx'
 import Buy from './pages/buy.jsx'
-
+import Booking from './pages/backend/booking/booking.jsx'
+import Students from './pages/backend/booking/student.jsx'
 
 
 
@@ -69,6 +70,8 @@ function App() {
 
 
       <Route path='/buy/:id' element={<Buy />} />
+      <Route path='/booking' element={<Booking />} />
+      <Route path='/students' element={<Students />} />
 
 
     </Routes>
