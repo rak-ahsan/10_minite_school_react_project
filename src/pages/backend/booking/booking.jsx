@@ -48,7 +48,7 @@ const booking = () => {
                                         <td>{item.number}</td>
                                         <td>{item.paymentMethod}</td>
                                         <td>
-                                            <Link to={`/teacher/${item.tea_id}/edit`} className='btn btn-success mx-2'><FontAwesomeIcon icon={faPen} /></Link>
+                                            <Link to={`/Editbook/${item.tea_id}/`} className='btn btn-success mx-2'><FontAwesomeIcon icon={faPen} /></Link>
                                         </td>
                                         {/* <td>
                                             <button className='btn btn-danger' onClick={(e) => deleteTeacher(e, item.tea_id)}><FontAwesomeIcon icon={faTrash} style={{ color: "#ffffff", }} /></button>

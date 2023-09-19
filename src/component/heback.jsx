@@ -6,16 +6,33 @@ import { faPhone } from '@fortawesome/free-solid-svg-icons'
 import "../css/nav.css"
 import { Link } from "react-router-dom"
 import { useNavigate } from 'react-router-dom'
+import { useEffect } from "react"
 
 
 function nav() {
     const dom = useNavigate()
 
+    let auth = sessionStorage.getItem('auth');
+    let role = localStorage.getItem('role');
+
+    useEffect(() => {
+        let token = localStorage.getItem('token');
+        let auth = sessionStorage.getItem('auth');
+        if (token !== auth || !token) {
+            alert("please Login")
+            dom("/")
+        }
+
+    }, []);
+
     function click(e) {
         e.preventDefault();
         confirm("are you sure?")
         dom("/")
+        localStorage.clear();
+
     }
+
     return (
         <>
             <nav className="navbar navbar-expand-lg bg-body-tertiary card bg">
@@ -57,9 +74,13 @@ function nav() {
                                     <li><Link className="dropdown-item" href="#">ফ্রি কোর্সসমূহ</Link></li>
                                 </ul>
                             </li> */}
-                            <li className="nav-item">
-                                <Link className="nav-link active" to="/courseadd">কোর্স এড করুন</Link>
-                            </li>
+                            {
+                                role == 1 &&
+                                <li className="nav-item">
+                                    <Link className="nav-link active" to="/courseadd">কোর্স এড করুন</Link>
+                                </li>
+                            }
+
                             <li className="nav-item">
                                 <Link className="nav-link active" to="/Addteacher">শিক্ষক যুক্ত করুন</Link>
                             </li>
