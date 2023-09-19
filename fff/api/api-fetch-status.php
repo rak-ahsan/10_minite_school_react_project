@@ -5,7 +5,7 @@ header('Access-Control-Allow-Origin: *');
 
 include "config.php";
 
-$sql = "SELECT * FROM comment order by comment_id DESC;
+$sql = "SELECT * FROM status ;
 ";
 $result = mysqli_query($conn, $sql) or die("SQL Query Failed.");
 

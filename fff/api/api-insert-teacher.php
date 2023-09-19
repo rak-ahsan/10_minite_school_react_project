@@ -6,13 +6,20 @@ header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,
 
 $data = json_decode(file_get_contents("php://input"), true);
 
-$comment = $data['comment'];
+$name = $data['name'];
+$fee = $data['fee'];
+$class = $data['class'];
+$subject = $data['subject'];
+$role = $data['role'];
+$number = $data['number'];
+$username = $data['username'];
+$password = $data['password'];
 
 include "config.php";
 
-$sql = "INSERT INTO comment(comment) 
+$sql = "INSERT INTO teacher(tea_name, tea_fee,tea_class,tea_subject,tea_role,tea_number,tea_username,tea_password) 
 VALUES 
-('$comment')";
+('$name','$fee' ,'$class',$subject,'$role','$number','$username','$password')";
 
 if(mysqli_query($conn, $sql)){
 	echo json_encode(array('message' => 'Student Record Inserted.', 'status' => true));
