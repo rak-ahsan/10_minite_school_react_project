@@ -28,7 +28,7 @@ const course = (props) => {
     }
 
     const [courseimg, setCourseimg] = useState({
-        courseimg:''
+        courseimg: ''
     });
     const handleFileChange = (e) => {
         setCourseimg(e.target.files[0]);
@@ -39,13 +39,13 @@ const course = (props) => {
         e.preventDefault();
 
         const formData = new FormData();
-        formData.append('courseimg', courseimg); 
+        formData.append('courseimg', courseimg);
         formData.append('coursename', course.coursename);
         formData.append('coursefee', course.coursefee);
         formData.append('courseduretion', course.courseduretion);
         formData.append('couseclass', course.couseclass);
         formData.append('coursesubject', course.coursesubject);
-console.log(formData);
+        console.log(formData);
 
         axios.post(`http://localhost/ReactProject/api/api-insert-course.php`, formData).then(res => {
             console.log(res);
@@ -53,11 +53,11 @@ console.log(formData);
                 'Course Added Successfully!',
                 '',
                 'success'
-              )
-              navigate('/viewcourse')
+            )
+            navigate('/viewcourse')
 
         });
-        
+
     };
 
 

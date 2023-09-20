@@ -32,9 +32,14 @@ const login = () => {
             let auth = res.data.token
             localStorage.setItem('name', res.data[0][0].tea_name);
             localStorage.setItem('role', res.data[0][0].tea_role);
+            localStorage.setItem('subject', res.data[0][0].sub_name);
+            localStorage.setItem('subject_id', res.data[0][0].tea_subject);
+            localStorage.setItem('class_name', res.data[0][0].class_name);
             localStorage.setItem('token', res.data.token);
             sessionStorage.setItem('auth', auth);
             dom('/dashboard');
+        }else{
+            alert ("please check Login Details")
         }
         
 

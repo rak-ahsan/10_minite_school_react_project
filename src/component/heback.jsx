@@ -14,6 +14,7 @@ function nav() {
 
     let auth = sessionStorage.getItem('auth');
     let role = localStorage.getItem('role');
+    let name = localStorage.getItem('name');
 
     useEffect(() => {
         let token = localStorage.getItem('token');
@@ -114,8 +115,8 @@ function nav() {
                             <div className="lgbtn login p-1 d-flex justify-contents-center align-items-center">
                                 <Link to="/" className="nav-link" onClick={click}>লগ-আউট</Link>
                             </div>
-
                         </div>
+                       <p>{name}</p> 
                     </div>
                 </div>
             </nav>
