@@ -12,14 +12,12 @@ import { useEffect } from "react"
 function nav() {
     const dom = useNavigate()
 
-    let auth = sessionStorage.getItem('auth');
     let role = localStorage.getItem('role');
     let name = localStorage.getItem('name');
 
     useEffect(() => {
         let token = localStorage.getItem('token');
-        let auth = sessionStorage.getItem('auth');
-        if (token !== auth || !token) {
+        if (!token) {
             alert("please Login")
             dom("/")
         }
