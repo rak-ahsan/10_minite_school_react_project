@@ -4,6 +4,9 @@ import Sidebar from '../sidebar'
 import Tables from '../../../component/tables'
 import axios from 'axios'
 import Swal from 'sweetalert2'
+import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faPen, faTrash } from '@fortawesome/free-solid-svg-icons'
 
 
 const viewcourse = () => {
@@ -17,6 +20,7 @@ const viewcourse = () => {
         axios.get(`http://localhost/ReactProject/api/api-fetch-course.php`).then(res => {
             setCourse(res.data);
             console.log(res);
+            var subData = res.data.coursesubject;
         });
     }, []);
 
@@ -61,11 +65,9 @@ const viewcourse = () => {
                 <div className="col-md-3">
                     <Sidebar />
                 </div>
-
-
                 <div className="col-md-9">
 
-                        <Tables
+                    {/* <Tables
                             // For Th
 
                             t1="কোর্সের নাম"
@@ -77,7 +79,6 @@ const viewcourse = () => {
 
                             // for map function
                             name={course}
-
                             // for map TD
                             n1={"coursename"}
                             n2={"coursefee"}
@@ -96,56 +97,86 @@ const viewcourse = () => {
                             id={"course_id"}
 
                             dlt={coursedelete}
+                        /> */}
 
-
-                        />
-               
-                
+                    <div className="container">
+                        <div className="row">
+                            <table className="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">কোর্সের নাম</th>
+                                        <th scope="col">কোর্সের ফী</th>
+                                        <th scope="col">কোর্সের চলমান সময়</th>
+                                        <th scope="col">শ্রেনি</th>
+                                        <th scope="col">কোর্সের সাবজেক্ট</th>
+                                        <th scope="col">Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {course.length > 0 && (
+                                        course.filter((course) => course.coursesubject == subject).map((item, index) => (
+                                            <tr key={index}>
+                                                <td>{item.coursename}</td>
+                                                <td>{item.coursefee}</td>
+                                                <td>{item.courseduretion}</td>
+                                                <td>{item.class_name}</td>
+                                                <td>{item.sub_name}</td>
+                                                <td>
+                                                    <Link to={`/teacher/${item.tea_id}/edit`} className='btn btn-success mx-2'><FontAwesomeIcon icon={faPen} /></Link>
+                                                </td>
+                                                <td>
+                                                    <button className='btn btn-danger' onClick={(e) => deleteTeacher(e, item.tea_id)}><FontAwesomeIcon icon={faTrash} style={{ color: "#ffffff", }} /></button>
+                                                </td>
+                                            </tr>
+                                        ))
+                                    )}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
-
-
-                
             </div>
-            <div className="col-md-9">
-                        <Tables
-                            // For Th
+            {localStorage.getItem('role') == 1 &&
+                <div className="col-md-9">
+                    <Tables
+                        // For Th
 
-                            t1="কোর্সের নাম"
-                            t2="কোর্সের ফী"
-                            t3="কোর্সের চলমান সময়"
-                            t4="শ্রেনি"
-                            t5="কোর্সের সাবজেক্ট"
-                            t10="Action"
+                        t1="কোর্সের নাম"
+                        t2="কোর্সের ফী"
+                        t3="কোর্সের চলমান সময়"
+                        t4="শ্রেনি"
+                        t5="কোর্সের সাবজেক্ট"
+                        t10="Action"
 
-                            // for map function
-                            name={course}
-
-
-                            // for map TD
-                            n1={"coursename"}
-                            n2={"coursefee"}
-                            n3={"courseduretion"}
-                            n4={"class_name"}
-                            n5={"sub_name"}
+                        // for map function
+                        name={course}
 
 
-                            con={1}
-                            // for image
-                            path={'images'}
-                            imageName={`courseimg`}
-
-                            // for link and passing id edit option
-                            link={"editstudent"}
-                            id={"course_id"}
-
-                            dlt={coursedelete}
+                        // for map TD
+                        n1={"coursename"}
+                        n2={"coursefee"}
+                        n3={"courseduretion"}
+                        n4={"class_name"}
+                        n5={"sub_name"}
 
 
-                        />
-               
-                    
-                </div>
-            </>
+                        con={1}
+                        // for image
+                        path={'images'}
+                        imageName={`courseimg`}
+
+                        // for link and passing id edit option
+                        link={"editstudent"}
+                        id={"course_id"}
+
+                        dlt={coursedelete}
+
+
+                    />
+
+
+                </div>}
+        </>
     )
 }
 
