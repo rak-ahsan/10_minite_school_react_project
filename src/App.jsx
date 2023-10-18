@@ -24,6 +24,7 @@ import Buy from './pages/buy.jsx'
 import Booking from './pages/backend/booking/booking.jsx'
 import Students from './pages/backend/booking/student.jsx'
 import Editbook from './pages/backend/booking/editbook.jsx'
+import Auth from './pages/auth.jsx'
 
 
 
@@ -51,7 +52,8 @@ function App() {
       <Route path='/signup' element={<Studentsignup />} />
 
       {/* for backend */}
-      <Route path='/addteacher' element={<Addteacher />} />
+      
+      <Route path='/addteacher' element={<Auth component = {Addteacher} />} />
       <Route path='/viewteacher' element={<Viewteacher />} />
       <Route path='/teacher/:id/edit' element={<Editteaacher />} />
 

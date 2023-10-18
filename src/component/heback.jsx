@@ -115,6 +115,8 @@ function nav() {
                             </div>
                         </div>
                        <p>{name}</p> 
+                       <p>{role}</p> 
+
                     </div>
                 </div>
             </nav>

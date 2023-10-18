@@ -114,19 +114,24 @@ const viewcourse = () => {
                                 </thead>
                                 <tbody>
                                     {course.length > 0 && (
-                                        course.filter((course) => course.coursesubject == subject).map((item, index) => (
+                                        course.filter((course) => course.coursesubject == localStorage.getItem('subject_id')).map((item, index) => (
                                             <tr key={index}>
                                                 <td>{item.coursename}</td>
                                                 <td>{item.coursefee}</td>
                                                 <td>{item.courseduretion}</td>
                                                 <td>{item.class_name}</td>
                                                 <td>{item.sub_name}</td>
+                                            { localStorage.getItem('role') == 1 && (
                                                 <td>
                                                     <Link to={`/teacher/${item.tea_id}/edit`} className='btn btn-success mx-2'><FontAwesomeIcon icon={faPen} /></Link>
                                                 </td>
+                                            )}
+                                            { localStorage.getItem('role') == 1 && (
+
                                                 <td>
                                                     <button className='btn btn-danger' onClick={(e) => deleteTeacher(e, item.tea_id)}><FontAwesomeIcon icon={faTrash} style={{ color: "#ffffff", }} /></button>
                                                 </td>
+                                             )}
                                             </tr>
                                         ))
                                     )}
