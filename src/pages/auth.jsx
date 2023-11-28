@@ -8,7 +8,7 @@ function Auth() {
             alert("access dinied")
         }
 
-
+ 
     return (
         <div>Access Denied</div>
         
