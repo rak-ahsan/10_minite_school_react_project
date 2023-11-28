@@ -17,7 +17,6 @@ const hsc = () => {
       });
   }, []);
   
-
   return (
     <>
       <Head />
