@@ -16,7 +16,7 @@ const hsc = () => {
         console.log(res);
       });
   }, []);
-  
+
   return (
     <>
       <Head />
