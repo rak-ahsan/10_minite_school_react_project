@@ -26,12 +26,6 @@ import Students from './pages/backend/booking/student.jsx'
 import Editbook from './pages/backend/booking/editbook.jsx'
 import Auth from './pages/auth.jsx'
 
-
-
-
-
-
-
 function App() {
   return (
     <Routes>
