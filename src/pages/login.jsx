@@ -24,8 +24,7 @@ const login = () => {
     axios
       .post(`https://10ms.rakahsan.online/api/login-api.php`, data)
       .then((res) => {
-        console.log(res);
-
+        var size = Object.keys(res.data[0][0]);
         if (res.data.token) {
           let auth = res.data.token;
           localStorage.setItem("name", res.data[0][0].tea_name);
