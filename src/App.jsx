@@ -25,6 +25,7 @@ import Booking from './pages/backend/booking/booking.jsx'
 import Students from './pages/backend/booking/student.jsx'
 import Editbook from './pages/backend/booking/editbook.jsx'
 import Auth from './pages/auth.jsx'
+import MultiSelectDropdown from './pages/test/test.jsx'
 
 function App() {
   return (
@@ -40,6 +41,7 @@ function App() {
       <Route path='/Hscbatch' element={<Hscbatch />} />
       <Route path='/Sidebar' element={<Sidebar />} />
       <Route path='*' element={<Npage />} />
+      <Route path='/test' element={<MultiSelectDropdown />} />
      
 
       {/* student studentsignup */}
