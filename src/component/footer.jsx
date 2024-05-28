@@ -1,5 +1,5 @@
 import React from 'react'
-import Logo from "../assets/logo.png"
+import Logo from "../assets/logo.PNG"
 import play from "../assets/google-play-icon.webp"
 import ios from "../assets/ios-store-icon.webp"
 import { Link } from 'react-router-dom'
