@@ -1,6 +1,4 @@
-import logo from "../assets/logo.png"
-import Home from "./Home.jsx"
-import Footer from "./footer"
+import logo from "../assets/logo.PNG"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faPhone } from '@fortawesome/free-solid-svg-icons'
 import "../css/nav.css"
