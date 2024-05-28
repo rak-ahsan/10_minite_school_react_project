@@ -1,4 +1,3 @@
-import React from 'react'
 import Logo from "../assets/logo.PNG"
 import play from "../assets/google-play-icon.webp"
 import ios from "../assets/ios-store-icon.webp"
