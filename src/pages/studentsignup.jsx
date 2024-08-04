@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import React, { useState, useEffect } from "react";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
@@ -7,6 +8,8 @@ import Frominp from "../component/frominp";
 import Bntsubmit from "../component/bntsubmit";
 
 const studentsignup = () => {
+  const baseURL = process.env.NEXT_PUBLIC_BACKEND_URL;
+
   const [student, setStudent] = useState({
     studentname: "",
     studentnumber: "",
@@ -49,30 +52,24 @@ const studentsignup = () => {
       studentrole: "4",
     };
     console.log();
-    axios
-      .post(`https://10ms.rakahsan.online/api/api-insert-student.php`, data)
-      .then((res) => {
-        Swal.fire("Student Record Stored Successfully!", "", "success");
-        console.log(res);
-        reset();
-      });
+    axios.post(`${baseURL}/api-insert-student.php`, data).then((res) => {
+      Swal.fire("Student Record Stored Successfully!", "", "success");
+      console.log(res);
+      reset();
+    });
   };
   const [clases, setClass] = useState([]);
   useEffect(() => {
-    axios
-      .get(`https://10ms.rakahsan.online/api/api-fetch-class.php`)
-      .then((res) => {
-        setClass(res.data);
-      });
+    axios.get(`${baseURL}/api-fetch-class.php`).then((res) => {
+      setClass(res.data);
+    });
   }, []);
 
   const [role, SetRole] = useState([]);
   useEffect(() => {
-    axios
-      .get(`https://10ms.rakahsan.online/api/api-fetch-role.php`)
-      .then((res) => {
-        SetRole(res.data);
-      });
+    axios.get(`${baseURL}/api/api-fetch-role.php`).then((res) => {
+      SetRole(res.data);
+    });
   }, []);
   return (
     <>

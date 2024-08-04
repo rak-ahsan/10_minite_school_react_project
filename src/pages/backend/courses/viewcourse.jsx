@@ -9,6 +9,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPen, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const viewcourse = () => {
+  const baseURL = process.env.NEXT_PUBLIC_BACKEND_URL;
+
   let classes = localStorage.getItem("class_name");
   let subject = localStorage.getItem("subject");
   let subject_id = localStorage.getItem("subject_id");
@@ -16,7 +18,7 @@ const viewcourse = () => {
 
   useEffect(() => {
     axios
-      .get(`https://10ms.rakahsan.online/api/api-fetch-course.php`)
+      .get(`${baseURL}/api-fetch-course.php`)
       .then((res) => {
         setCourse(res.data);
         console.log(res);
@@ -40,7 +42,7 @@ const viewcourse = () => {
       if (result.isConfirmed) {
         axios
           .get(
-            `https://10ms.rakahsan.online/api/api-course-delete.php?id=${course_id}`
+            `${baseURL}/api-course-delete.php?id=${course_id}`
           )
           .then((res) => {
             Swal.fire("Success!", "", "success");

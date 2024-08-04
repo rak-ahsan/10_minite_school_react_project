@@ -7,10 +7,11 @@ import axios from "axios";
 
 const hsc = () => {
   const [course, setCourse] = useState([]);
+  const baseURL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
   useEffect(() => {
     axios
-      .get(`https://10ms.rakahsan.online/api/api-fetch-course.php`)
+      .get(`${baseURL}/api-fetch-course.php`)
       .then((res) => {
         setCourse(res.data);
         console.log(res);

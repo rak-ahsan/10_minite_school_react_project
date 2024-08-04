@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 
 const buy = () => {
   let { id } = useParams();
+  const baseURL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
   const [payment, setPayment] = useState({
     name: "",
@@ -33,7 +34,7 @@ const buy = () => {
     };
     console.log(data);
     axios
-      .post(`https://10ms.rakahsan.online/api/api-insert-booking.php`, data)
+      .post(`${baseURL}/api-insert-booking.php`, data)
       .then((res) => {
         alert("success");
         console.log(res);

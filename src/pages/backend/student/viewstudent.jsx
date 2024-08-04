@@ -6,10 +6,11 @@ import axios from "axios";
 import Swal from "sweetalert2";
 const viewstudent = () => {
   const [student, setStudent] = useState([]);
+  const baseURL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
   useEffect(() => {
     axios
-      .get(`https://10ms.rakahsan.online/api/api-fetch-allstudent.php`)
+      .get(`${baseURL}/api-fetch-allstudent.php`)
       .then((res) => {
         setStudent(res.data);
         console.log(res);

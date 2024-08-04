@@ -9,6 +9,8 @@ import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 
 const course = (props) => {
+  const baseURL = process.env.NEXT_PUBLIC_BACKEND_URL;
+
   const navigate = useNavigate();
 
   const [course, setCourse] = useState({
@@ -44,7 +46,7 @@ const course = (props) => {
     console.log(formData);
 
     axios
-      .post(`https://10ms.rakahsan.online/api/api-insert-course.php`, formData)
+      .post(`${baseURL}/api-insert-course.php`, formData)
       .then((res) => {
         console.log(res);
         Swal.fire("Course Added Successfully!", "", "success");
@@ -55,7 +57,7 @@ const course = (props) => {
   const [clases, setClass] = useState([]);
   useEffect(() => {
     axios
-      .get(`https://10ms.rakahsan.online/api/api-fetch-class.php`)
+      .get(`${baseURL}/api-fetch-class.php`)
       .then((res) => {
         setClass(res.data);
       });
@@ -64,7 +66,7 @@ const course = (props) => {
   const [subject, SetSubject] = useState([]);
   useEffect(() => {
     axios
-      .get(`https://10ms.rakahsan.online/api/api-fetch-sunject.php`)
+      .get(`${baseURL}/api-fetch-sunject.php`)
       .then((res) => {
         SetSubject(res.data);
       });

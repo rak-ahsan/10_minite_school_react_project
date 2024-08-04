@@ -6,6 +6,8 @@ import axios from "axios";
 import Swal from "sweetalert2";
 
 function studen() {
+  const baseURL = process.env.NEXT_PUBLIC_BACKEND_URL;
+
   const [teacher, setTeacher] = useState({
     name: "",
     fee: "",
@@ -49,7 +51,7 @@ function studen() {
     };
     console.log(data);
     axios
-      .post(`https://10ms.rakahsan.online/api/api-insert-teacher.php`, data)
+      .post(`${baseURL}/api-insert-teacher.php`, data)
       .then((res) => {
         Swal.fire("Teacher Record Stored Successfully!", "", "success");
         reset();
@@ -59,7 +61,7 @@ function studen() {
   const [clases, setClass] = useState([]);
   useEffect(() => {
     axios
-      .get(`https://10ms.rakahsan.online/api/api-fetch-class.php`)
+      .get(`${baseURL}/api-fetch-class.php`)
       .then((res) => {
         setClass(res.data);
       });
@@ -68,7 +70,7 @@ function studen() {
   const [subject, SetSubject] = useState([]);
   useEffect(() => {
     axios
-      .get(`https://10ms.rakahsan.online/api/api-fetch-sunject.php`)
+      .get(`${baseURL}/api-fetch-sunject.php`)
       .then((res) => {
         SetSubject(res.data);
       });
@@ -77,7 +79,7 @@ function studen() {
   const [role, SetRole] = useState([]);
   useEffect(() => {
     axios
-      .get(`https://10ms.rakahsan.online/api/api-fetch-role.php`)
+      .get(`${baseURL}/api-fetch-role.php`)
       .then((res) => {
         SetRole(res.data);
       });

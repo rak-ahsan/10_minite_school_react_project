@@ -8,6 +8,8 @@ import axios from "axios";
 import Swal from "sweetalert2";
 
 const AddStudent = () => {
+  const baseURL = process.env.NEXT_PUBLIC_BACKEND_URL;
+
   const [student, setStudent] = useState({
     studentname: "",
     studentnumber: "",
@@ -50,7 +52,7 @@ const AddStudent = () => {
       studentrole: student.studentrole,
     };
     axios
-      .post(`https://10ms.rakahsan.online/api/api-insert-student.php`, data)
+      .post(`${baseURL}/api-insert-student.php`, data)
       .then((res) => {
         Swal.fire("Student Record Stored Successfully!", "", "success");
 
@@ -60,7 +62,7 @@ const AddStudent = () => {
   const [clases, setClass] = useState([]);
   useEffect(() => {
     axios
-      .get(`https://10ms.rakahsan.online/api/api-fetch-class.php`)
+      .get(`${baseURL}/api-fetch-class.php`)
       .then((res) => {
         setClass(res.data);
       });
@@ -69,7 +71,7 @@ const AddStudent = () => {
   const [role, SetRole] = useState([]);
   useEffect(() => {
     axios
-      .get(`https://10ms.rakahsan.online/api/api-fetch-role.php`)
+      .get(`${baseURL}/api-fetch-role.php`)
       .then((res) => {
         SetRole(res.data);
       });

@@ -8,9 +8,11 @@ import { faPen, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const booking = () => {
   const [booking, setBooking] = useState([]);
+  const baseURL = process.env.NEXT_PUBLIC_BACKEND_URL;
+
   useEffect(() => {
     axios
-      .get(`https://10ms.rakahsan.online/api/api-fetch-booking.php`)
+      .get(`${baseURL}/api-fetch-booking.php`)
       .then((res) => {
         setBooking(res.data);
         console.log(res);

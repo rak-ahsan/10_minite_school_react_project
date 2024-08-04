@@ -7,10 +7,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPen, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const ViewTeacher = () => {
+  const baseURL = process.env.NEXT_PUBLIC_BACKEND_URL;
+
   const [teacher, setTeacher] = useState([]);
   useEffect(() => {
     axios
-      .get(`https://10ms.rakahsan.online/api/api-fetch-allteacher.php`)
+      .get(`${baseURL}/api-fetch-allteacher.php`)
       .then((res) => {
         setTeacher(res.data);
         console.log(res);
@@ -23,7 +25,7 @@ const ViewTeacher = () => {
 
     if (confirm("Are You Sure?")) {
       axios
-        .get(`https://10ms.rakahsan.online/api/api-teacher.php?id=${tea_id}`)
+        .get(`${baseURL}/api-teacher.php?id=${tea_id}`)
         .then((res) => {
           alert("Done");
           click.closest("tr").remove();

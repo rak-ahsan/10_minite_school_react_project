@@ -5,6 +5,7 @@ import axios from "axios";
 
 const login = () => {
   const dom = useNavigate();
+  const baseURL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
   const [username, setUsername] = useState({
     username: "",
@@ -21,27 +22,25 @@ const login = () => {
       username: username.username,
       password: username.password,
     };
-    axios
-      .post(`https://10ms.rakahsan.online/api/login-api.php`, data)
-      .then((res) => {
-        var size = Object.keys(res.data[0][0]);
-        if (res.data.token) {
-          let auth = res.data.token;
-          localStorage.setItem("name", res.data[0][0].tea_name);
-          localStorage.setItem("role", res.data[0][0].tea_role);
-          localStorage.setItem("tea_id", res.data[0][0].tea_id);
-          localStorage.setItem("subject", res.data[0][0].sub_name);
-          localStorage.setItem("subject_id", res.data[0][0].tea_subject);
-          localStorage.setItem("class_name", res.data[0][0].class_name);
-          localStorage.setItem("token", res.data.token);
-          sessionStorage.setItem("auth", auth);
-          dom("/dashboard");
-        } else {
-          alert("please check Login Details");
-        }
+    axios.post(`${baseURL}/login-api.php`, data).then((res) => {
+      var size = Object.keys(res.data[0][0]);
+      if (res.data.token) {
+        let auth = res.data.token;
+        localStorage.setItem("name", res.data[0][0].tea_name);
+        localStorage.setItem("role", res.data[0][0].tea_role);
+        localStorage.setItem("tea_id", res.data[0][0].tea_id);
+        localStorage.setItem("subject", res.data[0][0].sub_name);
+        localStorage.setItem("subject_id", res.data[0][0].tea_subject);
+        localStorage.setItem("class_name", res.data[0][0].class_name);
+        localStorage.setItem("token", res.data.token);
+        sessionStorage.setItem("auth", auth);
+        dom("/dashboard");
+      } else {
+        alert("please check Login Details");
+      }
 
-        // dom('/dashboard')
-      });
+      // dom('/dashboard')
+    });
     console.log(data);
   };
 

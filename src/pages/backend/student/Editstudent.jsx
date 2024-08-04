@@ -9,6 +9,7 @@ import axios from "axios";
 
 const Editstudent = () => {
   let { id } = useParams();
+  const baseURL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
   const [student, setStudent] = useState({});
 
@@ -32,7 +33,7 @@ const Editstudent = () => {
 
     axios
       .put(
-        `https://10ms.rakahsan.online/api/api-update-student.php?id=${id}`,
+        `${baseURL}/api-update-student.php?id=${id}`,
         data
       )
       .then((res) => {
@@ -44,7 +45,7 @@ const Editstudent = () => {
   const [clases, setClass] = useState([]);
   useEffect(() => {
     axios
-      .get(`https://10ms.rakahsan.online/api/api-fetch-class.php`)
+      .get(`${baseURL}/api-fetch-class.php`)
       .then((res) => {
         setClass(res.data);
       });
@@ -53,7 +54,7 @@ const Editstudent = () => {
   const [role, SetRole] = useState([]);
   useEffect(() => {
     axios
-      .get(`https://10ms.rakahsan.online/api/api-fetch-role.php`)
+      .get(`${baseURL}/api-fetch-role.php`)
       .then((res) => {
         SetRole(res.data);
       });
@@ -62,7 +63,7 @@ const Editstudent = () => {
   useEffect(() => {
     axios
       .get(
-        `https://10ms.rakahsan.online/api/api-fetch-single-student.php?id=${id}`
+        `${baseURL}/api-fetch-single-student.php?id=${id}`
       )
       .then((res) => {
         console.log(res);

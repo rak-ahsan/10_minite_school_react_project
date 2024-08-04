@@ -7,6 +7,7 @@ import { useParams } from "react-router-dom";
 
 function teacherEdit() {
   let { id } = useParams();
+  const baseURL = process.env.NEXT_PUBLIC_BACKEND_URL;
 
   const [teacher, setTeacher] = useState({});
 
@@ -28,7 +29,7 @@ function teacherEdit() {
     };
     axios
       .put(
-        `https://10ms.rakahsan.online/api/api-update-teacher.php?id=${id}`,
+        `${baseURL}/api-update-teacher.php?id=${id}`,
         data
       )
       .then((res) => {
@@ -38,7 +39,7 @@ function teacherEdit() {
   useEffect(() => {
     axios
       .get(
-        `https://10ms.rakahsan.online/api/api-fetch-singleteacher.php?id=${id}`
+        `${baseURL}/api-fetch-singleteacher.php?id=${id}`
       )
       .then((res) => {
         console.log(res);
@@ -49,7 +50,7 @@ function teacherEdit() {
   const [clases, setClass] = useState([]);
   useEffect(() => {
     axios
-      .get(`https://10ms.rakahsan.online/api/api-fetch-class.php`)
+      .get(`${baseURL}/api-fetch-class.php`)
       .then((res) => {
         setClass(res.data);
       });
@@ -58,7 +59,7 @@ function teacherEdit() {
   const [subject, SetSubject] = useState([]);
   useEffect(() => {
     axios
-      .get(`https://10ms.rakahsan.online/api/api-fetch-sunject.php`)
+      .get(`${baseURL}/api-fetch-sunject.php`)
       .then((res) => {
         SetSubject(res.data);
       });
@@ -67,7 +68,7 @@ function teacherEdit() {
   const [role, SetRole] = useState([]);
   useEffect(() => {
     axios
-      .get(`https://10ms.rakahsan.online/api/api-fetch-role.php`)
+      .get(`${baseURL}/api-fetch-role.php`)
       .then((res) => {
         SetRole(res.data);
       });
