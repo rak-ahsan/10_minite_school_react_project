@@ -6,7 +6,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 const Student = () => {
-  const baseURL = process.env.NEXT_PUBLIC_BACKEND_URL;
+  const baseURL = import.meta.env.VITE_API_BASE_URL;
 
   const [comment, setComment] = useState({
     comment: "",
@@ -31,25 +31,19 @@ const Student = () => {
       comment: comment.comment,
     };
 
-    axios
-      .post(`${baseURL}/api-insert-comment.php`, data)
-      .then((res) => {
-        axios
-          .get(`${baseURL}/api-fetch-comment.php`)
-          .then((res) => {
-            setComments(res.data);
-          });
-
-        reset();
+    axios.post(`${baseURL}/api-insert-comment.php`, data).then((res) => {
+      axios.get(`${baseURL}/api-fetch-comment.php`).then((res) => {
+        setComments(res.data);
       });
+
+      reset();
+    });
   };
 
   useEffect(() => {
-    axios
-      .get(`${baseURL}/api-fetch-comment.php`)
-      .then((res) => {
-        setComments(res.data);
-      });
+    axios.get(`${baseURL}/api-fetch-comment.php`).then((res) => {
+      setComments(res.data);
+    });
   }, []);
 
   return (

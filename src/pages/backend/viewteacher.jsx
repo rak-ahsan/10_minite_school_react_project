@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPen, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const ViewTeacher = () => {
-  const baseURL = process.env.NEXT_PUBLIC_BACKEND_URL;
+  const baseURL = import.meta.env.VITE_API_BASE_URL;
 
   const [teacher, setTeacher] = useState([]);
   useEffect(() => {

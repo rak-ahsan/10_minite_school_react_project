@@ -7,7 +7,7 @@ import axios from "axios";
 
 const hsc = () => {
   const [course, setCourse] = useState([]);
-  const baseURL = process.env.NEXT_PUBLIC_BACKEND_URL;
+  const baseURL = import.meta.env.VITE_API_BASE_URL;
 
   useEffect(() => {
     axios

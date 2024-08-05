@@ -6,7 +6,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 const viewstudent = () => {
   const [student, setStudent] = useState([]);
-  const baseURL = process.env.NEXT_PUBLIC_BACKEND_URL;
+  const baseURL = import.meta.env.VITE_API_BASE_URL;
 
   useEffect(() => {
     axios

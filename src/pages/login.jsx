@@ -5,7 +5,7 @@ import axios from "axios";
 
 const login = () => {
   const dom = useNavigate();
-  const baseURL = process.env.NEXT_PUBLIC_BACKEND_URL;
+  const baseURL = import.meta.env.VITE_API_BASE_URL;
 
   const [username, setUsername] = useState({
     username: "",
@@ -50,9 +50,6 @@ const login = () => {
       <div className="container mt-5 justify-content-center d-flex">
         <form class="row g-3" onSubmit={save}>
           <div class="col-auto">
-            <label for="staticEmail2" class="visually-hidden">
-              Email
-            </label>
             <input
               type="text"
               class="form-control"

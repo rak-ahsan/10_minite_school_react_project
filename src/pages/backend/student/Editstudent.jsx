@@ -9,7 +9,7 @@ import axios from "axios";
 
 const Editstudent = () => {
   let { id } = useParams();
-  const baseURL = process.env.NEXT_PUBLIC_BACKEND_URL;
+  const baseURL = import.meta.env.VITE_API_BASE_URL;
 
   const [student, setStudent] = useState({});
 

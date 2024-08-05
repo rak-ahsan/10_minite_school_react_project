@@ -8,7 +8,7 @@ import Frominp from "../component/frominp";
 import Bntsubmit from "../component/bntsubmit";
 
 const studentsignup = () => {
-  const baseURL = process.env.NEXT_PUBLIC_BACKEND_URL;
+  const baseURL = import.meta.env.VITE_API_BASE_URL;
 
   const [student, setStudent] = useState({
     studentname: "",

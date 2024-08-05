@@ -7,7 +7,7 @@ import Bntsubmit from "../../../component/bntsubmit";
 import axios from "axios";
 
 const addcourse = () => {
-  const baseURL = process.env.NEXT_PUBLIC_BACKEND_URL;
+  const baseURL = import.meta.env.VITE_API_BASE_URL;
 
   const [course, setCourse] = useState({
     course_name: "",

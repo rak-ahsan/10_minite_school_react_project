@@ -8,7 +8,7 @@ import { faPen, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 const booking = () => {
   const [booking, setBooking] = useState([]);
-  const baseURL = process.env.NEXT_PUBLIC_BACKEND_URL;
+  const baseURL = import.meta.env.VITE_API_BASE_URL;
 
   useEffect(() => {
     axios

@@ -6,7 +6,7 @@ import axios from "axios";
 import Swal from "sweetalert2";
 
 function studen() {
-  const baseURL = process.env.NEXT_PUBLIC_BACKEND_URL;
+  const baseURL = import.meta.env.VITE_API_BASE_URL;
 
   const [teacher, setTeacher] = useState({
     name: "",
