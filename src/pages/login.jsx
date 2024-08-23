@@ -6,7 +6,7 @@ import axios from "axios";
 const login = () => {
   const dom = useNavigate();
   const baseURL = import.meta.env.VITE_API_BASE_URL;
-
+console.log('test');
   const [username, setUsername] = useState({
     username: "",
     password: "",
